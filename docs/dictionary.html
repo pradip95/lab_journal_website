@@ -421,7 +421,17 @@ df_new &lt;- rbind(df, col_C)</code></pre>
 </div>
 <div id="slicing-and-extracting-data-indexing-vectors" class="section level2">
 <h2><span class="header-section-number">1.4</span> Slicing and extracting data indexing vectors</h2>
-<p>x[n] nth element x[-n] all but nth element x[1:n] first n elements x[-(1:n)] elements from n+1 to the end x[c(1,4,2)] specific elements x[“name”] elements named “name” x[x&gt;3] all elements greater than 3 x[x &gt; 3 &amp; x &lt; 5] all elements between 3 and 5 x[x %in% c(“a”,“and”,“the”)] all elements in given set</p>
+<ul>
+<li><code>x[n]</code> nth element</li>
+<li><code>x[-n]</code> all but nth element</li>
+<li><code>x[1:n]</code> first n elements</li>
+<li><code>x[-(1:n)]</code> elements from n+1 to the end</li>
+<li><code>x[c(1,4,2)]</code> specific elements</li>
+<li><code>x[“name”]</code> elements named “name”</li>
+<li><code>x[x&gt;3]</code> all elements greater than 3</li>
+<li><code>x[x &gt; 3 &amp; x &lt; 5]</code> all elements between 3 and 5</li>
+<li><code>x[x %in% c(“a”,“and”,“the”)]</code> all elements in given set</li>
+</ul>
 </div>
 <div id="indexing-lists" class="section level2">
 <h2><span class="header-section-number">1.5</span> Indexing lists</h2>
@@ -512,19 +522,19 @@ plot(x)</code></pre>
 <h2><span class="header-section-number">1.14</span> Distributions</h2>
 <p>rnorm() This function inserts a normal distribution.</p>
 <pre class="r"><code>rnorm(100, mean = 50, sd=2)</code></pre>
-<pre><code>##   [1] 48.51422 49.35241 46.51749 54.61365 53.42815 49.63896 51.13058 49.58542
-##   [9] 48.71058 53.14047 48.09225 51.56902 52.72210 52.17501 49.44657 47.32803
-##  [17] 51.12078 53.19487 51.20952 48.96306 49.21884 54.96893 52.75525 51.37982
-##  [25] 51.49269 50.27676 51.22844 51.23917 49.10776 48.26185 50.70383 49.65575
-##  [33] 50.01906 49.82355 48.96398 46.20127 47.64226 49.25623 44.50406 48.68073
-##  [41] 51.46123 46.76245 53.04930 50.59359 47.68226 50.09636 50.60382 49.84569
-##  [49] 49.54133 51.28183 49.16707 50.87305 50.76364 50.25714 54.89240 51.03888
-##  [57] 49.01364 50.18137 52.16119 46.79604 50.12272 46.31549 49.10735 47.32355
-##  [65] 51.57048 53.57054 49.10067 52.17174 50.68769 51.31334 49.73558 48.57541
-##  [73] 50.01388 48.32241 50.85136 48.07623 49.49534 49.00418 52.41920 48.87045
-##  [81] 52.91689 51.31449 53.55843 48.61435 50.91577 51.81772 48.29522 51.94041
-##  [89] 48.58500 53.76988 50.36102 52.24990 52.79019 48.37629 51.07436 47.38224
-##  [97] 49.52584 52.75991 48.98688 50.45483</code></pre>
+<pre><code>##   [1] 49.14240 46.97073 50.24301 47.82710 47.98301 50.76707 52.49853 52.39792
+##   [9] 51.11365 50.22728 50.44770 50.64620 51.29166 50.75774 50.00158 50.31051
+##  [17] 47.24635 48.21534 48.00597 48.43284 49.11914 49.21239 49.94141 50.35768
+##  [25] 46.03245 46.71668 55.97330 52.11206 47.64061 47.29347 48.69339 51.00545
+##  [33] 50.77739 50.32293 49.51877 53.18083 46.92585 47.52424 49.95628 51.16799
+##  [41] 52.54728 50.22851 48.61952 51.15078 50.92367 50.60937 51.36182 48.83588
+##  [49] 46.93290 47.53007 51.61465 51.32542 50.16388 50.46057 49.08604 49.17423
+##  [57] 56.76503 48.12331 47.49365 51.65573 51.02278 51.70493 51.05041 50.45050
+##  [65] 48.12941 49.28590 51.72657 51.87508 49.86044 48.52822 52.54852 45.05979
+##  [73] 52.72272 48.11585 50.20640 51.56521 51.97889 48.46246 51.06764 53.42034
+##  [81] 51.86222 47.15172 50.10344 48.72694 49.22016 51.49082 50.75823 47.20254
+##  [89] 49.50903 49.89363 51.35218 51.06046 47.38110 48.07098 50.63122 51.20254
+##  [97] 51.59996 52.18852 51.33209 47.90373</code></pre>
 </div>
 <div id="programming" class="section level2">
 <h2><span class="header-section-number">1.15</span> Programming</h2>
