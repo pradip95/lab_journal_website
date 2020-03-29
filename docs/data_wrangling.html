@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Annie" />
+
+<meta name="date" content="2019-03-18" />
+
+<title>Data-Wrangling</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MyLabJournal</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="journal.html">Journal</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Practice
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="dictionary.html">Dictionary</a>
+    </li>
+    <li>
+      <a href="class_notes.html">Class Notes</a>
+    </li>
+    <li>
+      <a href="ggplot_graphs.html">ggplot graphs</a>
+    </li>
+    <li>
+      <a href="data_wrangling.html">data wrangling</a>
+    </li>
+    <li>
+      <a href="statistics.html">statistics</a>
+    </li>
+    <li>
+      <a href="machine_learning.html">machine learning</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data-Wrangling</h1>
+<h4 class="author">Annie</h4>
+<h4 class="date">March 18, 2019</h4>
+
+</div>
+
+
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>df &lt;- starwars
+
+df$name</code></pre>
+<pre><code>##  [1] &quot;Luke Skywalker&quot;        &quot;C-3PO&quot;                 &quot;R2-D2&quot;                
+##  [4] &quot;Darth Vader&quot;           &quot;Leia Organa&quot;           &quot;Owen Lars&quot;            
+##  [7] &quot;Beru Whitesun lars&quot;    &quot;R5-D4&quot;                 &quot;Biggs Darklighter&quot;    
+## [10] &quot;Obi-Wan Kenobi&quot;        &quot;Anakin Skywalker&quot;      &quot;Wilhuff Tarkin&quot;       
+## [13] &quot;Chewbacca&quot;             &quot;Han Solo&quot;              &quot;Greedo&quot;               
+## [16] &quot;Jabba Desilijic Tiure&quot; &quot;Wedge Antilles&quot;        &quot;Jek Tono Porkins&quot;     
+## [19] &quot;Yoda&quot;                  &quot;Palpatine&quot;             &quot;Boba Fett&quot;            
+## [22] &quot;IG-88&quot;                 &quot;Bossk&quot;                 &quot;Lando Calrissian&quot;     
+## [25] &quot;Lobot&quot;                 &quot;Ackbar&quot;                &quot;Mon Mothma&quot;           
+## [28] &quot;Arvel Crynyd&quot;          &quot;Wicket Systri Warrick&quot; &quot;Nien Nunb&quot;            
+## [31] &quot;Qui-Gon Jinn&quot;          &quot;Nute Gunray&quot;           &quot;Finis Valorum&quot;        
+## [34] &quot;Jar Jar Binks&quot;         &quot;Roos Tarpals&quot;          &quot;Rugor Nass&quot;           
+## [37] &quot;Ric Olié&quot;              &quot;Watto&quot;                 &quot;Sebulba&quot;              
+## [40] &quot;Quarsh Panaka&quot;         &quot;Shmi Skywalker&quot;        &quot;Darth Maul&quot;           
+## [43] &quot;Bib Fortuna&quot;           &quot;Ayla Secura&quot;           &quot;Dud Bolt&quot;             
+## [46] &quot;Gasgano&quot;               &quot;Ben Quadinaros&quot;        &quot;Mace Windu&quot;           
+## [49] &quot;Ki-Adi-Mundi&quot;          &quot;Kit Fisto&quot;             &quot;Eeth Koth&quot;            
+## [52] &quot;Adi Gallia&quot;            &quot;Saesee Tiin&quot;           &quot;Yarael Poof&quot;          
+## [55] &quot;Plo Koon&quot;              &quot;Mas Amedda&quot;            &quot;Gregar Typho&quot;         
+## [58] &quot;Cordé&quot;                 &quot;Cliegg Lars&quot;           &quot;Poggle the Lesser&quot;    
+## [61] &quot;Luminara Unduli&quot;       &quot;Barriss Offee&quot;         &quot;Dormé&quot;                
+## [64] &quot;Dooku&quot;                 &quot;Bail Prestor Organa&quot;   &quot;Jango Fett&quot;           
+## [67] &quot;Zam Wesell&quot;            &quot;Dexter Jettster&quot;       &quot;Lama Su&quot;              
+## [70] &quot;Taun We&quot;               &quot;Jocasta Nu&quot;            &quot;Ratts Tyerell&quot;        
+## [73] &quot;R4-P17&quot;                &quot;Wat Tambor&quot;            &quot;San Hill&quot;             
+## [76] &quot;Shaak Ti&quot;              &quot;Grievous&quot;              &quot;Tarfful&quot;              
+## [79] &quot;Raymus Antilles&quot;       &quot;Sly Moore&quot;             &quot;Tion Medon&quot;           
+## [82] &quot;Finn&quot;                  &quot;Rey&quot;                   &quot;Poe Dameron&quot;          
+## [85] &quot;BB8&quot;                   &quot;Captain Phasma&quot;        &quot;Padmé Amidala&quot;</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+df$height</code></pre>
+<pre><code>##  [1] 172 167  96 202 150 178 165  97 183 182 188 180 228 180 173 175 170 180  66
+## [20] 170 183 200 190 177 175 180 150  NA  88 160 193 191 170 196 224 206 183 137
+## [39] 112 183 163 175 180 178  94 122 163 188 198 196 171 184 188 264 188 196 185
+## [58] 157 183 183 170 166 165 193 191 183 168 198 229 213 167  79  96 193 191 178
+## [77] 216 234 188 178 206  NA  NA  NA  NA  NA 165</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+df$gender</code></pre>
+<pre><code>##  [1] &quot;male&quot;          NA              NA              &quot;male&quot;         
+##  [5] &quot;female&quot;        &quot;male&quot;          &quot;female&quot;        NA             
+##  [9] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [13] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;hermaphrodite&quot;
+## [17] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [21] &quot;male&quot;          &quot;none&quot;          &quot;male&quot;          &quot;male&quot;         
+## [25] &quot;male&quot;          &quot;male&quot;          &quot;female&quot;        &quot;male&quot;         
+## [29] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [33] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [37] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [41] &quot;female&quot;        &quot;male&quot;          &quot;male&quot;          &quot;female&quot;       
+## [45] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [49] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;female&quot;       
+## [53] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;male&quot;         
+## [57] &quot;male&quot;          &quot;female&quot;        &quot;male&quot;          &quot;male&quot;         
+## [61] &quot;female&quot;        &quot;female&quot;        &quot;female&quot;        &quot;male&quot;         
+## [65] &quot;male&quot;          &quot;male&quot;          &quot;female&quot;        &quot;male&quot;         
+## [69] &quot;male&quot;          &quot;female&quot;        &quot;female&quot;        &quot;male&quot;         
+## [73] &quot;female&quot;        &quot;male&quot;          &quot;male&quot;          &quot;female&quot;       
+## [77] &quot;male&quot;          &quot;male&quot;          &quot;male&quot;          &quot;female&quot;       
+## [81] &quot;male&quot;          &quot;male&quot;          &quot;female&quot;        &quot;male&quot;         
+## [85] &quot;none&quot;          &quot;female&quot;        &quot;female&quot;</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+df[1,]</code></pre>
+<pre><code>## # A tibble: 1 x 13
+##   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;    
+## 1 Luke…    172    77 blond      fair       blue              19 male   Tatooine 
+## # … with 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+## #   starships &lt;list&gt;</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+df[ ,4]</code></pre>
+<pre><code>## # A tibble: 87 x 1
+##    hair_color   
+##    &lt;chr&gt;        
+##  1 blond        
+##  2 &lt;NA&gt;         
+##  3 &lt;NA&gt;         
+##  4 none         
+##  5 brown        
+##  6 brown, grey  
+##  7 brown        
+##  8 &lt;NA&gt;         
+##  9 black        
+## 10 auburn, white
+## # … with 77 more rows</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+df[1:4]</code></pre>
+<pre><code>## # A tibble: 87 x 4
+##    name               height  mass hair_color   
+##    &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;        
+##  1 Luke Skywalker        172    77 blond        
+##  2 C-3PO                 167    75 &lt;NA&gt;         
+##  3 R2-D2                  96    32 &lt;NA&gt;         
+##  4 Darth Vader           202   136 none         
+##  5 Leia Organa           150    49 brown        
+##  6 Owen Lars             178   120 brown, grey  
+##  7 Beru Whitesun lars    165    75 brown        
+##  8 R5-D4                  97    32 &lt;NA&gt;         
+##  9 Biggs Darklighter     183    84 black        
+## 10 Obi-Wan Kenobi        182    77 auburn, white
+## # … with 77 more rows</code></pre>
+<pre class="r"><code>library(dplyr)
+
+df &lt;- starwars
+
+dim(df)</code></pre>
+<pre><code>## [1] 87 13</code></pre>
+<div id="flanker-task" class="section level2">
+<h2>Flanker task</h2>
+<p>In a flanker task, participants identify a central stimulus (as quickly and accurately) as possible, while ignoring distracting stimuli presented on the left or right of the central stimulus (the flankers).</p>
+<p>For example, the stimulus could be “HHH”, and the correct response would be H. This is called a compatible (or congruent) stimulus because the flanking Hs are the same as the central stimulus. Alternatively, the stimulus could be “HSH”, and the correct resposne would be S. This is called an incompatible (or incongruent) stimulus because the flanking Hs are different from the central stimulus.</p>
+<p>The data for this assignment come from a flanker task where participants responded to many flanker stimuli over several trials.</p>
+</div>
+<div id="load-the-data-and-libraries-you-will-use" class="section level2">
+<h2>Load the data and libraries you will use</h2>
+<p>I will help you with some sample code that compiles all of the text files in a single long format data frame.</p>
+<p>The data is contained in this .zip file: <a href="https://crumplab.github.io/psyc7709/Presentations/FlankerData.zip">FlankerData.zip</a></p>
+<p>The code chunk below assumes that you have placed the folder FlankerData into your R project folder.</p>
+</div>
+<div id="pre-processing" class="section level2">
+<h2>Pre-processing</h2>
+<div id="get-accuracy-for-each-trial" class="section level3">
+<h3>get accuracy for each trial</h3>
+<p>A correct response occurs when the letter in the response column is the same as the letter in the middle position of item in the stimulus column. Create an accuracy column that codes whether the response was correct or incorrect on each trial (coding can be TRUE/FALSE, 0/1, or some other coding scheme that identifies correct vs incorrect)</p>
+<pre class="r"><code>library(dplyr)
+
+correct_answer &lt;- c()
+for (i in 1:4224) {
+  correct_answer[i] = strsplit(all_data$stimulus, split = &quot;&quot;)[[i]][2]
+}</code></pre>
+<pre><code>## Error in strsplit(all_data$stimulus, split = &quot;&quot;): non-character argument</code></pre>
+<pre class="r"><code>all_data &lt;- all_data %&gt;%
+  mutate(upper_answer = toupper(all_data$response),
+         correct_answer = correct_answer,
+         accuracy= upper_answer == correct_answer)</code></pre>
+<pre><code>## Error: Column `upper_answer` must be length 15 (the number of rows) or one, not 0</code></pre>
+</div>
+<div id="get-reaction-time-on-each-trial" class="section level3">
+<h3>Get Reaction time on each trial</h3>
+<p>The stimulus_onset column gives a computer timestamp in milliseconds indicating when the stimulus was presented. The response_time column is a timestamp in milliseconds for the response. The difference between the two (response_time - stimulus_onset) is the reaction time in milliseconds. Add a column that calculates the reaction time on each trial.</p>
+<p><strong>tip:</strong> notice that the numbers in response_time and stimulus_onset have the class integer64. Unfortunately, ggplot does not play nice with integers in this format. you will need to make sure your RT column is in the class integer or numeric.</p>
+<pre class="r"><code>library(dplyr)
+
+all_data &lt;- all_data %&gt;%
+  mutate(reaction_time = as.integer(response_time - stimulus_onset))</code></pre>
+<pre><code>## Error: object &#39;response_time&#39; not found</code></pre>
+</div>
+</div>
+<div id="checks" class="section level2">
+<h2>Checks</h2>
+<p>Check how many trials each subject completed in the congruent and incongruent conditions, the mean accuracy for each subject in each congruency condition, and the mean RT for each subject in each congruency condition.</p>
+<pre class="r"><code>library(dplyr)
+
+subject_check &lt;- all_data %&gt;%
+                  mutate(subject = as.factor(subject),
+                         congruency = as.factor(congruency)) %&gt;%
+                  group_by(subject,congruency) %&gt;%
+                  dplyr::summarise(total_trials = length(reaction_time),
+                            mean_reaction_time = mean(reaction_time),
+                            mean_accuracy = mean(accuracy))</code></pre>
+<pre><code>## Error in is.factor(x): object &#39;subject&#39; not found</code></pre>
+<pre class="r"><code>knitr::kable(subject_check)</code></pre>
+<pre><code>## Error in knitr::kable(subject_check): object &#39;subject_check&#39; not found</code></pre>
+<div id="exclusion" class="section level3">
+<h3>Exclusion</h3>
+<p>It is common to exclude Reaction times that are very slow. There are many methods and procedures for excluding outlying reaction times. To keep it simple, exclude all RTs that are longer than 2000 ms</p>
+<pre class="r"><code>library(dplyr)
+
+included_data &lt;- all_data %&gt;%
+  filter(reaction_time &lt;= 2000)</code></pre>
+<pre><code>## Error: object &#39;reaction_time&#39; not found</code></pre>
+</div>
+</div>
+<div id="analysis" class="section level2">
+<h2>Analysis</h2>
+<div id="reaction-time-analysis" class="section level3">
+<h3>Reaction Time analysis</h3>
+<ol style="list-style-type: decimal">
+<li>Get the individual subject mean reaction times for <strong>correct</strong> congruent and incongruent trials.</li>
+</ol>
+<pre class="r"><code>library(dplyr)
+
+reaction_time_correct_trials &lt;- included_data %&gt;%
+  filter(accuracy == TRUE) %&gt;%
+  group_by(subject, congruency) %&gt;%
+  dplyr::summarise(mean_reaction = mean(reaction_time))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;included_data&#39; not found</code></pre>
+<pre class="r"><code>knitr::kable(reaction_time_correct_trials)</code></pre>
+<pre><code>## Error in knitr::kable(reaction_time_correct_trials): object &#39;reaction_time_correct_trials&#39; not found</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Get the overall mean RTs and SEMs (standard errors of the mean) for the congruent and incongruent condition. Make a table and graph.</li>
+</ol>
+<pre class="r"><code>library(dplyr)
+
+descriptives_by_group &lt;- reaction_time_correct_trials %&gt;%
+  group_by(congruency) %&gt;%
+  dplyr::summarise(mean_reaction_time = mean(mean_reaction),
+                   standard_error = sd(mean_reaction)/(sqrt(length(mean_reaction))))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;reaction_time_correct_trials&#39; not found</code></pre>
+<pre class="r"><code>knitr::kable(descriptives_by_group)</code></pre>
+<pre><code>## Error in knitr::kable(descriptives_by_group): object &#39;descriptives_by_group&#39; not found</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Compute the flanker effect for each subject, taking the difference between their mean incongruent and congruent RT. Then plot the mean flanker effect, along with the SEM of the mean flanker effect</li>
+</ol>
+<p><strong>tip:</strong> Not all problems have an easy solution in dplyr, this is one them. You may have an easier time using logical indexing of the dataframe to solve this part.</p>
+<pre class="r"><code>library(dplyr)
+
+reaction_times &lt;- included_data %&gt;%
+  group_by(subject, congruency) %&gt;%
+  dplyr::summarise(mean_reaction = mean(reaction_time))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;included_data&#39; not found</code></pre>
+<pre class="r"><code>congruent_reaction &lt;- reaction_times %&gt;%
+  filter(congruency==&quot;C&quot;)</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;reaction_times&#39; not found</code></pre>
+<pre class="r"><code>incrongruent_reaction &lt;- reaction_times %&gt;%
+  filter(congruency==&quot;I&quot;)</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;reaction_times&#39; not found</code></pre>
+<pre class="r"><code>flanker &lt;- incrongruent_reaction$mean_reaction - congruent_reaction$mean_reaction</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;incrongruent_reaction&#39; not found</code></pre>
+<pre class="r"><code>flanker_mean &lt;- mean(flanker)</code></pre>
+<pre><code>## Error in mean(flanker): object &#39;flanker&#39; not found</code></pre>
+<pre class="r"><code>flanker_std_error &lt;- sd(flanker)/(sqrt(length(flanker)))</code></pre>
+<pre><code>## Error in is.data.frame(x): object &#39;flanker&#39; not found</code></pre>
+<pre class="r"><code>flanker_df &lt;- data.frame(flanker_mean = flanker_mean,
+                         standard_error = flanker_std_error,
+                         x = &quot;Flanker Effect&quot;)</code></pre>
+<pre><code>## Error in data.frame(flanker_mean = flanker_mean, standard_error = flanker_std_error, : object &#39;flanker_mean&#39; not found</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+ggplot(flanker_df, aes(x=x, y=flanker_mean))+
+  geom_bar(stat=&quot;identity&quot;)+
+  theme_classic(base_size=12)+
+  ylab(&quot;Mean Flanker Effect&quot;)+
+  geom_errorbar(aes(ymin=flanker_mean-flanker_std_error,
+                    ymax=flanker_mean+flanker_std_error),
+                position=position_dodge(width=0.9),
+                width=.1,
+                color=&quot;black&quot;)</code></pre>
+<pre><code>## Error in ggplot(flanker_df, aes(x = x, y = flanker_mean)): object &#39;flanker_df&#39; not found</code></pre>
+</div>
+<div id="exploratory-analysis" class="section level3">
+<h3>Exploratory analysis</h3>
+<p>Multiple questions may often be asked of data, especially questions that may not have been of original interest to the researchers.</p>
+<p>In flanker experiments, like this one, it is well known that the flanker effect is modulated by the nature of the previous trial. Specifically, the flanker effect on trial n (the current trial), is larger when the previous trial (trial n-1) involved a congruent item, compared to an incongruent item.</p>
+<p>Transform the data to conduct a sequence analysis. The dataframe should already include a factor (column) for the congruency level of trial n. Make another column that codes for the congruency level of trial n-1 (the previous trial). This creates a 2x2 design with trial n congruency x trial n-1 congruency.</p>
+<p>First get teh subject means for each condition, then create a table and plot for teh overall means and SEMs in each condition. This should include:</p>
+<ol style="list-style-type: decimal">
+<li>trial n congruent : trial n-1 congruent</li>
+<li>trial n incongruent : trial n-1 congruent</li>
+<li>trial n congruent : trial n-1 incongruent</li>
+<li>trial n incongruent : trial n-1 incongruent</li>
+</ol>
+<p><strong>tip:</strong> be careful, note that the first trial in each experiment can not be included, because it had no preceding trial</p>
+<pre class="r"><code>prev_congruency &lt;- 0
+
+for (i in 2:length(included_data$subject)) {
+  if (included_data$subject[i]==included_data$subject[i-1]) {
+    prev_congruency[i] &lt;- included_data$congruency[i-1]
+  }
+  else {
+    prev_congruency[i] &lt;- 0
+  }
+}</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;included_data&#39; not found</code></pre>
+<pre class="r"><code>prev_analysis &lt;- included_data %&gt;%
+  mutate(prev_congruency = prev_congruency) %&gt;%
+  filter(prev_congruency != 0, accuracy == TRUE) %&gt;%
+  group_by(subject,congruency,prev_congruency) %&gt;%
+  dplyr::summarise(mean_reaction = mean(reaction_time))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;included_data&#39; not found</code></pre>
+<pre class="r"><code>prev_analysis &lt;- prev_analysis %&gt;%
+  group_by(congruency,prev_congruency) %&gt;%
+  dplyr::summarise(mean_react = mean(mean_reaction),
+                   standard_error = sd(mean_reaction)/(sqrt(length(mean_reaction))))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;prev_analysis&#39; not found</code></pre>
+<pre class="r"><code>knitr::kable(prev_analysis)</code></pre>
+<pre><code>## Error in knitr::kable(prev_analysis): object &#39;prev_analysis&#39; not found</code></pre>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

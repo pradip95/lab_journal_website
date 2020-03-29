@@ -1,0 +1,25 @@
+name: "MyLabJournal"
+navbar:
+  title: "MyLabJournal"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Journal"
+      href: journal.html
+    - text: "Practice"
+      menu:
+            - text: "Dictionary"
+              href: dictionary.html
+            - text: "Class Notes"
+              href: class_notes.html
+            - text: "ggplot graphs"
+              href: ggplot_graphs.html
+            - text: "data wrangling"
+              href: data_wrangling.html
+            - text: "statistics"
+              href: statistics.html
+            - text: "machine learning"
+              href: machine_learning.html
+    - text: "Links"
+      href: links.html
+output_dir: "docs"
