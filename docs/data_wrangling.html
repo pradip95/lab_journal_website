@@ -281,7 +281,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Practice
+    Class notes
      
     <span class="caret"></span>
   </a>
@@ -484,12 +484,12 @@ correct_answer &lt;- c()
 for (i in 1:4224) {
   correct_answer[i] = strsplit(all_data$stimulus, split = &quot;&quot;)[[i]][2]
 }</code></pre>
-<pre><code>## Error in strsplit(all_data$stimulus, split = &quot;&quot;): non-character argument</code></pre>
+<pre><code>## Error in strsplit(all_data$stimulus, split = &quot;&quot;): object &#39;all_data&#39; not found</code></pre>
 <pre class="r"><code>all_data &lt;- all_data %&gt;%
   mutate(upper_answer = toupper(all_data$response),
          correct_answer = correct_answer,
          accuracy= upper_answer == correct_answer)</code></pre>
-<pre><code>## Error: Column `upper_answer` must be length 15 (the number of rows) or one, not 0</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;all_data&#39; not found</code></pre>
 </div>
 <div id="get-reaction-time-on-each-trial" class="section level3">
 <h3>Get Reaction time on each trial</h3>
@@ -499,7 +499,7 @@ for (i in 1:4224) {
 
 all_data &lt;- all_data %&gt;%
   mutate(reaction_time = as.integer(response_time - stimulus_onset))</code></pre>
-<pre><code>## Error: object &#39;response_time&#39; not found</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;all_data&#39; not found</code></pre>
 </div>
 </div>
 <div id="checks" class="section level2">
@@ -514,7 +514,7 @@ subject_check &lt;- all_data %&gt;%
                   dplyr::summarise(total_trials = length(reaction_time),
                             mean_reaction_time = mean(reaction_time),
                             mean_accuracy = mean(accuracy))</code></pre>
-<pre><code>## Error in is.factor(x): object &#39;subject&#39; not found</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;all_data&#39; not found</code></pre>
 <pre class="r"><code>knitr::kable(subject_check)</code></pre>
 <pre><code>## Error in knitr::kable(subject_check): object &#39;subject_check&#39; not found</code></pre>
 <div id="exclusion" class="section level3">
@@ -524,7 +524,7 @@ subject_check &lt;- all_data %&gt;%
 
 included_data &lt;- all_data %&gt;%
   filter(reaction_time &lt;= 2000)</code></pre>
-<pre><code>## Error: object &#39;reaction_time&#39; not found</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;all_data&#39; not found</code></pre>
 </div>
 </div>
 <div id="analysis" class="section level2">

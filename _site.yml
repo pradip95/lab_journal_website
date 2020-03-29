@@ -11,7 +11,7 @@ navbar:
             - text: "Dictionary"
               href: dictionary.html
             - text: "Class Notes"
-              href: class_notes.html
+              href: practice.html
             - text: "ggplot graphs"
               href: ggplot_graphs.html
             - text: "data wrangling"

@@ -1,14 +1,17 @@
 ---
-title: "Journal"
+title: "Journal (reproducible report)"
+author: "Joschka Schwarz"
+date: "04/01/2020"
 output:
   html_document:
     toc: true
     toc_float: true
     collapsed: false
     number_sections: false
-    toc_depth: 1
+    toc_depth: 3
     #code_folding: hide
 ---
+
 <style>
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
     background-color: #2DC6D6;

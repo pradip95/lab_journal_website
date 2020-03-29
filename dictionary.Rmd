@@ -1,51 +1,32 @@
 ---
 title: "Dictionary"
-author: "Annie"
-date: "February 23, 2019"
+author: "Joschka Schwarz"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
-#Dictionary
+# Dictionary {-}
 
-##General bits
-1. help(topic)
-This searches the R help desk and retrieves information about what you are searching for.
-```{r}
-help("summary.aov") #provides a description of this function and general directions on how to use it
-```
+## General bits
 
-
-2. ?topic
+1. `?function_name`
 This function provides information about how particular pieces of syntax work. 
 ```{r}
-?topic <- data.frame
+?list.files
 ```
 
-
-3. ls()
-Not exactly sure what this function is doing but it appears to have created 2 lists based on previously existing values in the environment.
-```{r}
-ls(1,2)
-
-```
-
-
-4. dir()
-This lists the names of each file in the R project.
-```{r}
-dir()
-```
-
-
-5. list.files()
+5. `list.files()`
 This function lists all the names of each file in a given R project.
 ```{r}
 list.files()
 ```
 
+...
 
-##Input and output
-1. save()
+***
+
+## Input and output
+1. `saveRDS()`
 This saves an R object to a file.
 ```{r}
 x <- 1
@@ -53,63 +34,17 @@ save("x", file = "testfile.txt")
 ```
 
 
-2. load()
+2. `readRDS()`
 This loads saved data.
 ```{r}
 load(file = "testfile.txt")
 ```
 
+...
 
-3. data()
-This function allows you to search for pre-made data sets in r
-ex.
-```{r}
-?data
-data()
-```
+***
 
-4. library()
-This code allows you to access a package and insert it into your code. Then it allows your package to work for the code chunk.
-ex.
-```{r}
-library(ggplot2)
-Names <- rep(c("Dara", "Azalea", "Barbi", "Rowena", "Fiona"),each=2)
-MF <- rnorm(10, 45, 25)
-Condition <- rep(c("Social", "Nonsocial"), 5)
-Aversity <- rep(c("A", "N_A"), times=c(4,6))
-plot_df <- data.frame (Names, MF, Condition, Aversity)
-
-ggplot(plot_df, aes(x=Condition, y=MF, group=Names, 
-                    linetype=Aversity))
-
-```
-
-5. read.table()
-This reads a particular table and creates a data frame.
-```{r}
-read.table(file = "testfile.txt")
-```
-
-
-6. read.csv()
-This function also read a particular table and creates a data frame.
-
-
-7. scan()
-
-8. print()
-This function analyzes the results of your code (executing all the commands)
-ex.
-```{r}
-data.frame(1,2,3,4)
-print(data.frame())
-```
-
-9. cat()
-
-10. write.table()
-
-##Data Creation
+## Data Creation
 1. c()
 This function is used to combine elements (factors in a vectore for example)
 ```{r}
@@ -124,14 +59,14 @@ This lists all the numbers in a specified range.
 ```
 
 
-3. seq()
+3. `seq()`
 Not exactly sure what is happening here but it appears that this function is using the first two numbers to help derive the third.
 ```{r}
 seq(2,10,7)
 ```
 
 
-4. rep()
+4. `rep()`
 This function replicates the first number the number of times that is designated in the second space
 ```{r}
 rep(1,10)
@@ -151,23 +86,12 @@ This provides a numbered list for all objects in a set.
 list(2,6,1,3,8)
 ```
 
-
-7. matrix()
-
-8. factor()
-
-9. rbind()
+9. `rbind()` and  `cbind()`
 This function allows you to bind a new row to an existing data frame
 ```{r}
-df <- rbind(df,
-          random_number=runif(dim(df)[1],0,1))
-```
-
-10. cbind()
-This funtion allows you to bind a new column to an existing data frame
-```{r}
-df <- cbind(df,
-          random_number=runif(dim(df)[1],0,1))
+A <- 1
+B <- 2
+df <- rbind(A, B)
 ```
 
 
@@ -212,23 +136,6 @@ as.character(x)
 5.is.character(x)
 6.length(x)
 7.dim(x)
-This funtion provides the number of rows and columns in a data frame without the data
-```{r}
-library(dplyr)
-
-df <- starwars
-
-dim(df)
-```
-8.dimnames(x)
-This function lists the names of the categories in a data frame
-```{r}
-library(dplyr)
-
-df <- starwars
-
-dimnames(df)
-```
 9.nrow(x)
 10.ncol(x)
 11.class()
@@ -370,8 +277,6 @@ rnorm(100, mean = 50, sd=2)
 ```
 
 
-runif()
-
 ##Programming
 show that you can define a function
 show that you can write a for loop
@@ -382,25 +287,3 @@ Explain what break() does, show you can use it
 
 ##Installing some packages
 Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.
-
-1.ggplot2
-```{r}
-library(ggplot2)
-```
-
-2.dplyr
-```{r}
-library(dplyr)
-```
-
-3.shiny
-
-4.data.table
-```{r}
-library(data.table)
-```
-
-5.reshape2
-
-
-6.stringr

@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Annie" />
+<meta name="author" content="Joschka Schwarz" />
 
-<meta name="date" content="2019-02-23" />
+<meta name="date" content="2020-03-29" />
 
 <title>Dictionary</title>
 
@@ -281,7 +281,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Practice
+    Class notes
      
     <span class="caret"></span>
   </a>
@@ -322,112 +322,56 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Dictionary</h1>
-<h4 class="author">Annie</h4>
-<h4 class="date">February 23, 2019</h4>
+<h4 class="author">Joschka Schwarz</h4>
+<h4 class="date">2020-03-29</h4>
 
 </div>
 
 
-<p>#Dictionary</p>
-<p>##General bits 1. help(topic) This searches the R help desk and retrieves information about what you are searching for.</p>
-<pre class="r"><code>help(&quot;summary.aov&quot;) #provides a description of this function and general directions on how to use it</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>?topic This function provides information about how particular pieces of syntax work.</li>
+<div id="dictionary" class="section level1 unnumbered">
+<h1>Dictionary</h1>
+<div id="general-bits" class="section level2">
+<h2>General bits</h2>
+<ol style="list-style-type: decimal">
+<li><code>?function_name</code> This function provides information about how particular pieces of syntax work.</li>
 </ol>
-<pre class="r"><code>?topic &lt;- data.frame</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>ls() Not exactly sure what this function is doing but it appears to have created 2 lists based on previously existing values in the environment.</li>
-</ol>
-<pre class="r"><code>ls(1,2)</code></pre>
-<pre><code>##  [1] &quot;a&quot;               &quot;A&quot;               &quot;Ages&quot;            &quot;all_data&quot;       
-##  [5] &quot;aov_out&quot;         &quot;Aversity&quot;        &quot;b&quot;               &quot;B&quot;              
-##  [9] &quot;C&quot;               &quot;Condition&quot;       &quot;conds&quot;           &quot;correct_answer&quot; 
-## [13] &quot;df&quot;              &quot;DV&quot;              &quot;dv_means&quot;        &quot;dv_SEs&quot;         
-## [17] &quot;factor_one&quot;      &quot;factor_two&quot;      &quot;factor1&quot;         &quot;Gender&quot;         
-## [21] &quot;i&quot;               &quot;MF&quot;              &quot;my_df&quot;           &quot;Names&quot;          
-## [25] &quot;plot_df&quot;         &quot;prev_congruency&quot; &quot;run_anova&quot;       &quot;sim_rs&quot;         
-## [29] &quot;tmp&quot;             &quot;x&quot;               &quot;y&quot;</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>dir() This lists the names of each file in the R project.</li>
-</ol>
-<pre class="r"><code>dir()</code></pre>
-<pre><code>##  [1] &quot;_site.yml&quot;                 &quot;class_notes_files&quot;        
-##  [3] &quot;class_notes.html&quot;          &quot;class_notes.Rmd&quot;          
-##  [5] &quot;data_wrangling.html&quot;       &quot;data_wrangling.Rmd&quot;       
-##  [7] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
-##  [9] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
-## [11] &quot;index.Rmd&quot;                 &quot;journal_cache&quot;            
-## [13] &quot;journal_files&quot;             &quot;journal.Rmd&quot;              
-## [15] &quot;lab_journal_website.Rproj&quot; &quot;links.Rmd&quot;                
-## [17] &quot;README.md&quot;                 &quot;Rprof.out&quot;                
-## [19] &quot;site_libs&quot;                 &quot;statistics.Rmd&quot;           
-## [21] &quot;testfile.txt&quot;</code></pre>
+<pre class="r"><code>?list.files</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>list.files() This function lists all the names of each file in a given R project.</li>
+<li><code>list.files()</code> This function lists all the names of each file in a given R project.</li>
 </ol>
 <pre class="r"><code>list.files()</code></pre>
-<pre><code>##  [1] &quot;_site.yml&quot;                 &quot;class_notes_files&quot;        
-##  [3] &quot;class_notes.html&quot;          &quot;class_notes.Rmd&quot;          
-##  [5] &quot;data_wrangling.html&quot;       &quot;data_wrangling.Rmd&quot;       
-##  [7] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
-##  [9] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
-## [11] &quot;index.Rmd&quot;                 &quot;journal_cache&quot;            
-## [13] &quot;journal_files&quot;             &quot;journal.Rmd&quot;              
-## [15] &quot;lab_journal_website.Rproj&quot; &quot;links.Rmd&quot;                
-## [17] &quot;README.md&quot;                 &quot;Rprof.out&quot;                
-## [19] &quot;site_libs&quot;                 &quot;statistics.Rmd&quot;           
-## [21] &quot;testfile.txt&quot;</code></pre>
-<p>##Input and output 1. save() This saves an R object to a file.</p>
+<pre><code>##  [1] &quot;_site.yml&quot;                 &quot;data_wrangling.html&quot;      
+##  [3] &quot;data_wrangling.Rmd&quot;        &quot;dictionary.Rmd&quot;           
+##  [5] &quot;docs&quot;                      &quot;ggplotgraphs.Rmd&quot;         
+##  [7] &quot;images&quot;                    &quot;index.Rmd&quot;                
+##  [9] &quot;journal_cache&quot;             &quot;journal_files&quot;            
+## [11] &quot;journal.Rmd&quot;               &quot;lab_journal_website.Rproj&quot;
+## [13] &quot;links.Rmd&quot;                 &quot;practice.Rmd&quot;             
+## [15] &quot;README.md&quot;                 &quot;Rprof.out&quot;                
+## [17] &quot;site_libs&quot;                 &quot;statistics.Rmd&quot;           
+## [19] &quot;testfile.txt&quot;</code></pre>
+<p>…</p>
+<hr />
+</div>
+<div id="input-and-output" class="section level2">
+<h2>Input and output</h2>
+<ol style="list-style-type: decimal">
+<li><code>saveRDS()</code> This saves an R object to a file.</li>
+</ol>
 <pre class="r"><code>x &lt;- 1
 save(&quot;x&quot;, file = &quot;testfile.txt&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>load() This loads saved data.</li>
+<li><code>readRDS()</code> This loads saved data.</li>
 </ol>
 <pre class="r"><code>load(file = &quot;testfile.txt&quot;)</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>data() This function allows you to search for pre-made data sets in r ex.</li>
+<p>…</p>
+<hr />
+</div>
+<div id="data-creation" class="section level2">
+<h2>Data Creation</h2>
+<ol style="list-style-type: decimal">
+<li>c() This function is used to combine elements (factors in a vectore for example)</li>
 </ol>
-<pre class="r"><code>?data
-data()</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>library() This code allows you to access a package and insert it into your code. Then it allows your package to work for the code chunk. ex.</li>
-</ol>
-<pre class="r"><code>library(ggplot2)
-Names &lt;- rep(c(&quot;Dara&quot;, &quot;Azalea&quot;, &quot;Barbi&quot;, &quot;Rowena&quot;, &quot;Fiona&quot;),each=2)
-MF &lt;- rnorm(10, 45, 25)
-Condition &lt;- rep(c(&quot;Social&quot;, &quot;Nonsocial&quot;), 5)
-Aversity &lt;- rep(c(&quot;A&quot;, &quot;N_A&quot;), times=c(4,6))
-plot_df &lt;- data.frame (Names, MF, Condition, Aversity)
-
-ggplot(plot_df, aes(x=Condition, y=MF, group=Names, 
-                    linetype=Aversity))</code></pre>
-<p><img src="dictionary_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<ol start="5" style="list-style-type: decimal">
-<li>read.table() This reads a particular table and creates a data frame.</li>
-</ol>
-<pre class="r"><code>read.table(file = &quot;testfile.txt&quot;)</code></pre>
-<pre><code>## Warning in read.table(file = &quot;testfile.txt&quot;): line 3 appears to contain embedded
-## nulls</code></pre>
-<pre><code>## Warning in read.table(file = &quot;testfile.txt&quot;): incomplete final line found by
-## readTableHeader on &#39;testfile.txt&#39;</code></pre>
-<pre><code>##     V1
-## 1 RDX3
-## 2    X</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p>read.csv() This function also read a particular table and creates a data frame.</p></li>
-<li><p>scan()</p></li>
-<li><p>print() This function analyzes the results of your code (executing all the commands) ex.</p></li>
-</ol>
-<pre class="r"><code>data.frame(1,2,3,4)</code></pre>
-<pre><code>##   X1 X2 X3 X4
-## 1  1  2  3  4</code></pre>
-<pre class="r"><code>print(data.frame())</code></pre>
-<pre><code>## data frame with 0 columns and 0 rows</code></pre>
-<ol start="9" style="list-style-type: decimal">
-<li><p>cat()</p></li>
-<li><p>write.table()</p></li>
-</ol>
-<p>##Data Creation 1. c() This function is used to combine elements (factors in a vectore for example)</p>
 <pre class="r"><code>c(1,2,3,4,5)</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <ol start="2" style="list-style-type: decimal">
@@ -436,12 +380,12 @@ ggplot(plot_df, aes(x=Condition, y=MF, group=Names,
 <pre class="r"><code>1:10</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>seq() Not exactly sure what is happening here but it appears that this function is using the first two numbers to help derive the third.</li>
+<li><code>seq()</code> Not exactly sure what is happening here but it appears that this function is using the first two numbers to help derive the third.</li>
 </ol>
 <pre class="r"><code>seq(2,10,7)</code></pre>
 <pre><code>## [1] 2 9</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>rep() This function replicates the first number the number of times that is designated in the second space</li>
+<li><code>rep()</code> This function replicates the first number the number of times that is designated in the second space</li>
 </ol>
 <pre class="r"><code>rep(1,10)</code></pre>
 <pre><code>##  [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
@@ -469,48 +413,17 @@ ggplot(plot_df, aes(x=Condition, y=MF, group=Names,
 ## 
 ## [[5]]
 ## [1] 8</code></pre>
-<ol start="7" style="list-style-type: decimal">
-<li><p>matrix()</p></li>
-<li><p>factor()</p></li>
-<li><p>rbind() This function allows you to bind a new row to an existing data frame</p></li>
+<ol start="9" style="list-style-type: decimal">
+<li><code>rbind()</code> and <code>cbind()</code> This function allows you to bind a new row to an existing data frame</li>
 </ol>
-<pre class="r"><code>df &lt;- rbind(df,
-          random_number=runif(dim(df)[1],0,1))</code></pre>
-<ol start="10" style="list-style-type: decimal">
-<li>cbind() This funtion allows you to bind a new column to an existing data frame</li>
-</ol>
-<pre class="r"><code>df &lt;- cbind(df,
-          random_number=runif(dim(df)[1],0,1))</code></pre>
+<pre class="r"><code>A &lt;- 1
+B &lt;- 2
+df &lt;- rbind(A, B)</code></pre>
 <p>##Slicing and extracting data indexing vectors x[n] nth element x[-n] all but nth element x[1:n] first n elements x[-(1:n)] elements from n+1 to the end x[c(1,4,2)] specific elements x[“name”] elements named “name” x[x&gt;3] all elements greater than 3 x[x &gt; 3 &amp; x &lt; 5] all elements between 3 and 5 x[x %in% c(“a”,“and”,“the”)] all elements in given set</p>
 <p>##Indexing lists x[n] list with elements n x[[n]] nt h element of the list x[[“name”]] element of the list named “name” x$name id.</p>
 <p>##Indexing matrices x[i,j] element at row i, column j x[i,] row i x[,j] column j x[,c(1,3)] columns 1 and 3 x[“name”,] row named “name” Indexing data frames (matrix indexing plus the following) x[[“name”]] column named “name” x$nameid.</p>
 <p>##Variable conversion as.data.frame(x) as.numeric(x) as.logical(x) as.character(x)</p>
-<p>##Variable information 1.is.na(x) 2.is.null(x) 3.is.data.frame(x) 4.is.numeric(x) 5.is.character(x) 6.length(x) 7.dim(x) This funtion provides the number of rows and columns in a data frame without the data</p>
-<pre class="r"><code>library(dplyr)
-
-df &lt;- starwars
-
-dim(df)</code></pre>
-<pre><code>## [1] 87 13</code></pre>
-<p>8.dimnames(x) This function lists the names of the categories in a data frame</p>
-<pre class="r"><code>library(dplyr)
-
-df &lt;- starwars
-
-dimnames(df)</code></pre>
-<pre><code>## [[1]]
-##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot; &quot;11&quot; &quot;12&quot; &quot;13&quot; &quot;14&quot; &quot;15&quot;
-## [16] &quot;16&quot; &quot;17&quot; &quot;18&quot; &quot;19&quot; &quot;20&quot; &quot;21&quot; &quot;22&quot; &quot;23&quot; &quot;24&quot; &quot;25&quot; &quot;26&quot; &quot;27&quot; &quot;28&quot; &quot;29&quot; &quot;30&quot;
-## [31] &quot;31&quot; &quot;32&quot; &quot;33&quot; &quot;34&quot; &quot;35&quot; &quot;36&quot; &quot;37&quot; &quot;38&quot; &quot;39&quot; &quot;40&quot; &quot;41&quot; &quot;42&quot; &quot;43&quot; &quot;44&quot; &quot;45&quot;
-## [46] &quot;46&quot; &quot;47&quot; &quot;48&quot; &quot;49&quot; &quot;50&quot; &quot;51&quot; &quot;52&quot; &quot;53&quot; &quot;54&quot; &quot;55&quot; &quot;56&quot; &quot;57&quot; &quot;58&quot; &quot;59&quot; &quot;60&quot;
-## [61] &quot;61&quot; &quot;62&quot; &quot;63&quot; &quot;64&quot; &quot;65&quot; &quot;66&quot; &quot;67&quot; &quot;68&quot; &quot;69&quot; &quot;70&quot; &quot;71&quot; &quot;72&quot; &quot;73&quot; &quot;74&quot; &quot;75&quot;
-## [76] &quot;76&quot; &quot;77&quot; &quot;78&quot; &quot;79&quot; &quot;80&quot; &quot;81&quot; &quot;82&quot; &quot;83&quot; &quot;84&quot; &quot;85&quot; &quot;86&quot; &quot;87&quot;
-## 
-## [[2]]
-##  [1] &quot;name&quot;       &quot;height&quot;     &quot;mass&quot;       &quot;hair_color&quot; &quot;skin_color&quot;
-##  [6] &quot;eye_color&quot;  &quot;birth_year&quot; &quot;gender&quot;     &quot;homeworld&quot;  &quot;species&quot;   
-## [11] &quot;films&quot;      &quot;vehicles&quot;   &quot;starships&quot;</code></pre>
-<p>9.nrow(x) 10.ncol(x) 11.class() 12.attributes()</p>
+<p>##Variable information 1.is.na(x) 2.is.null(x) 3.is.data.frame(x) 4.is.numeric(x) 5.is.character(x) 6.length(x) 7.dim(x) 9.nrow(x) 10.ncol(x) 11.class() 12.attributes()</p>
 <p>##Data selection and manipulation 1.which.max() 2.which.min() 3.which() 4.sort() 5.unique() 6.table() 7.sample()</p>
 <p>##Math 1.max() This sets the maximum value included in a data set.</p>
 <pre class="r"><code>x &lt;- c(1,2,3,4,5,10)
@@ -560,43 +473,30 @@ cor(x,y)</code></pre>
 <p>##Plotting hist() This function creates a histogram graph of a given set of data.</p>
 <pre class="r"><code>x &lt;- c(1,20,50)
 hist(x)</code></pre>
-<p><img src="dictionary_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="dictionary_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>plot() This function creates a plot graph of a given set of data.</p>
 <pre class="r"><code>x &lt;- cbind(c(1,2,3,4),c(10,20,30,40))
 plot(x)</code></pre>
-<p><img src="dictionary_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="dictionary_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>##Distributions rnorm() This function inserts a normal distribution.</p>
 <pre class="r"><code>rnorm(100, mean = 50, sd=2)</code></pre>
-<pre><code>##   [1] 51.38985 48.23492 50.69449 50.64425 50.17769 50.55513 49.51369 47.31242
-##   [9] 48.36526 50.78377 50.26376 52.02543 49.23597 49.46199 49.73587 50.41068
-##  [17] 47.63964 52.15130 47.93095 49.00594 50.94390 49.33399 51.09841 52.38286
-##  [25] 47.75359 53.10360 48.63787 52.28931 50.08841 49.89678 51.71436 54.06541
-##  [33] 49.42200 50.99486 50.11215 53.40451 46.77515 49.92354 48.97284 50.16306
-##  [41] 52.57328 49.50310 52.53177 48.86663 50.50161 50.73727 48.97228 50.97677
-##  [49] 50.63950 52.49881 49.28743 51.81805 51.95630 49.46464 48.80338 52.52158
-##  [57] 48.96902 50.57113 51.15049 48.87314 50.31630 48.64534 51.62245 44.84018
-##  [65] 49.37443 53.23743 51.66071 48.48543 50.42167 47.11695 51.16087 50.75887
-##  [73] 50.92297 50.95687 47.69472 48.49583 48.26927 48.40862 49.74962 50.60326
-##  [81] 50.33360 53.68444 51.05589 48.70507 51.34810 53.19282 50.72007 51.67440
-##  [89] 48.20747 45.32343 50.44111 51.51111 50.67238 52.13181 50.38965 48.78399
-##  [97] 53.33960 48.89744 50.12720 52.15287</code></pre>
-<p>runif()</p>
+<pre><code>##   [1] 49.44467 50.91577 49.76838 50.45350 47.01308 47.26941 51.75514 45.95909
+##   [9] 53.54557 47.74696 51.12000 49.87093 52.72203 50.59327 53.98611 49.68630
+##  [17] 51.23441 49.63357 48.55985 49.62216 49.85641 47.11743 50.66202 50.21814
+##  [25] 49.38402 48.11081 48.93614 51.39440 48.80890 50.13549 53.97484 49.72495
+##  [33] 50.26609 47.86023 51.03756 50.70304 51.13731 48.11483 50.08776 50.67841
+##  [41] 49.92192 47.57118 48.37107 50.71473 49.70384 50.23134 49.66480 52.11047
+##  [49] 49.68923 51.30014 48.08334 51.34954 49.32398 50.51062 47.39580 51.12908
+##  [57] 51.06513 49.74966 51.34345 48.74151 52.34907 50.00700 49.75011 52.23871
+##  [65] 49.45040 48.27490 47.55379 46.84461 51.86975 51.50230 48.91399 50.16712
+##  [73] 49.13372 50.59713 48.97045 49.94896 48.34773 50.64074 47.01896 44.65197
+##  [81] 48.19005 46.83519 52.58208 53.30664 50.48357 51.65282 49.75725 47.18657
+##  [89] 50.47452 48.14804 48.24018 51.69573 50.55074 49.69601 53.13701 53.14419
+##  [97] 49.96383 52.54247 50.21752 47.70331</code></pre>
 <p>##Programming show that you can define a function show that you can write a for loop show that you can write a while loop show that you can write an if else statement Explain what return() does inside a function, show you can use it Explain what break() does, show you can use it</p>
 <p>##Installing some packages Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.</p>
-<p>1.ggplot2</p>
-<pre class="r"><code>library(ggplot2)</code></pre>
-<p>2.dplyr</p>
-<pre class="r"><code>library(dplyr)</code></pre>
-<p>3.shiny</p>
-<p>4.data.table</p>
-<pre class="r"><code>library(data.table)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;data.table&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     between, first, last</code></pre>
-<p>5.reshape2</p>
-<p>6.stringr</p>
+</div>
+</div>
 
 
 
