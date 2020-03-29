@@ -354,18 +354,14 @@ $(document).ready(function () {
 <pre><code>##  [1] &quot;_site.yml&quot;                 &quot;class_notes_files&quot;        
 ##  [3] &quot;class_notes.html&quot;          &quot;class_notes.Rmd&quot;          
 ##  [5] &quot;data_wrangling.html&quot;       &quot;data_wrangling.Rmd&quot;       
-##  [7] &quot;dictionary_files&quot;          &quot;dictionary.html&quot;          
-##  [9] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
-## [11] &quot;ggplotgraphs_files&quot;        &quot;ggplotgraphs.html&quot;        
-## [13] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
-## [15] &quot;index.html&quot;                &quot;index.Rmd&quot;                
-## [17] &quot;journal_cache&quot;             &quot;journal_files&quot;            
-## [19] &quot;journal.html&quot;              &quot;journal.Rmd&quot;              
-## [21] &quot;lab_journal_website.Rproj&quot; &quot;links.html&quot;               
-## [23] &quot;links.Rmd&quot;                 &quot;README.md&quot;                
-## [25] &quot;Rprof.out&quot;                 &quot;site_libs&quot;                
-## [27] &quot;statistics_files&quot;          &quot;statistics.Rmd&quot;           
-## [29] &quot;testfile.txt&quot;</code></pre>
+##  [7] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
+##  [9] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
+## [11] &quot;index.Rmd&quot;                 &quot;journal_cache&quot;            
+## [13] &quot;journal_files&quot;             &quot;journal.Rmd&quot;              
+## [15] &quot;lab_journal_website.Rproj&quot; &quot;links.Rmd&quot;                
+## [17] &quot;README.md&quot;                 &quot;Rprof.out&quot;                
+## [19] &quot;site_libs&quot;                 &quot;statistics.Rmd&quot;           
+## [21] &quot;testfile.txt&quot;</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>list.files() This function lists all the names of each file in a given R project.</li>
 </ol>
@@ -373,18 +369,14 @@ $(document).ready(function () {
 <pre><code>##  [1] &quot;_site.yml&quot;                 &quot;class_notes_files&quot;        
 ##  [3] &quot;class_notes.html&quot;          &quot;class_notes.Rmd&quot;          
 ##  [5] &quot;data_wrangling.html&quot;       &quot;data_wrangling.Rmd&quot;       
-##  [7] &quot;dictionary_files&quot;          &quot;dictionary.html&quot;          
-##  [9] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
-## [11] &quot;ggplotgraphs_files&quot;        &quot;ggplotgraphs.html&quot;        
-## [13] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
-## [15] &quot;index.html&quot;                &quot;index.Rmd&quot;                
-## [17] &quot;journal_cache&quot;             &quot;journal_files&quot;            
-## [19] &quot;journal.html&quot;              &quot;journal.Rmd&quot;              
-## [21] &quot;lab_journal_website.Rproj&quot; &quot;links.html&quot;               
-## [23] &quot;links.Rmd&quot;                 &quot;README.md&quot;                
-## [25] &quot;Rprof.out&quot;                 &quot;site_libs&quot;                
-## [27] &quot;statistics_files&quot;          &quot;statistics.Rmd&quot;           
-## [29] &quot;testfile.txt&quot;</code></pre>
+##  [7] &quot;dictionary.Rmd&quot;            &quot;docs&quot;                     
+##  [9] &quot;ggplotgraphs.Rmd&quot;          &quot;images&quot;                   
+## [11] &quot;index.Rmd&quot;                 &quot;journal_cache&quot;            
+## [13] &quot;journal_files&quot;             &quot;journal.Rmd&quot;              
+## [15] &quot;lab_journal_website.Rproj&quot; &quot;links.Rmd&quot;                
+## [17] &quot;README.md&quot;                 &quot;Rprof.out&quot;                
+## [19] &quot;site_libs&quot;                 &quot;statistics.Rmd&quot;           
+## [21] &quot;testfile.txt&quot;</code></pre>
 <p>##Input and output 1. save() This saves an R object to a file.</p>
 <pre class="r"><code>x &lt;- 1
 save(&quot;x&quot;, file = &quot;testfile.txt&quot;)</code></pre>
@@ -575,19 +567,19 @@ plot(x)</code></pre>
 <p><img src="dictionary_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>##Distributions rnorm() This function inserts a normal distribution.</p>
 <pre class="r"><code>rnorm(100, mean = 50, sd=2)</code></pre>
-<pre><code>##   [1] 49.19703 49.04641 49.61168 52.23397 48.61055 53.14359 47.68273 50.37332
-##   [9] 49.47651 51.48597 49.17316 50.05820 49.71083 51.26788 52.01454 50.81042
-##  [17] 51.25121 48.01216 49.53074 49.12001 50.18184 50.35272 47.94920 49.42187
-##  [25] 46.99217 49.69337 52.60389 47.47279 50.39018 45.69813 49.73039 44.56192
-##  [33] 48.75636 51.09505 48.99095 47.42651 50.81242 48.58005 50.97902 50.97122
-##  [41] 48.52530 49.30451 47.89242 48.04020 50.96307 50.66012 50.35230 49.14508
-##  [49] 49.50655 50.67504 51.84343 50.86751 48.31878 53.74560 49.18433 48.01604
-##  [57] 48.19719 48.45614 48.59230 53.30026 48.35167 51.53286 52.00715 47.25177
-##  [65] 50.20493 46.60600 53.07483 50.82408 49.22824 52.15589 47.39406 51.35457
-##  [73] 49.45056 51.14016 50.95556 49.50926 48.56471 54.99952 48.21818 51.53246
-##  [81] 48.64641 49.37722 49.99594 48.29780 51.52384 50.22395 50.38259 46.85971
-##  [89] 47.86291 45.78010 47.42984 51.91903 49.20812 50.72005 46.66448 50.87294
-##  [97] 52.85756 50.57600 48.23077 51.76565</code></pre>
+<pre><code>##   [1] 51.38985 48.23492 50.69449 50.64425 50.17769 50.55513 49.51369 47.31242
+##   [9] 48.36526 50.78377 50.26376 52.02543 49.23597 49.46199 49.73587 50.41068
+##  [17] 47.63964 52.15130 47.93095 49.00594 50.94390 49.33399 51.09841 52.38286
+##  [25] 47.75359 53.10360 48.63787 52.28931 50.08841 49.89678 51.71436 54.06541
+##  [33] 49.42200 50.99486 50.11215 53.40451 46.77515 49.92354 48.97284 50.16306
+##  [41] 52.57328 49.50310 52.53177 48.86663 50.50161 50.73727 48.97228 50.97677
+##  [49] 50.63950 52.49881 49.28743 51.81805 51.95630 49.46464 48.80338 52.52158
+##  [57] 48.96902 50.57113 51.15049 48.87314 50.31630 48.64534 51.62245 44.84018
+##  [65] 49.37443 53.23743 51.66071 48.48543 50.42167 47.11695 51.16087 50.75887
+##  [73] 50.92297 50.95687 47.69472 48.49583 48.26927 48.40862 49.74962 50.60326
+##  [81] 50.33360 53.68444 51.05589 48.70507 51.34810 53.19282 50.72007 51.67440
+##  [89] 48.20747 45.32343 50.44111 51.51111 50.67238 52.13181 50.38965 48.78399
+##  [97] 53.33960 48.89744 50.12720 52.15287</code></pre>
 <p>runif()</p>
 <p>##Programming show that you can define a function show that you can write a for loop show that you can write a while loop show that you can write an if else statement Explain what return() does inside a function, show you can use it Explain what break() does, show you can use it</p>
 <p>##Installing some packages Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.</p>
