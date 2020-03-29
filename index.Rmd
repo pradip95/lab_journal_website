@@ -23,11 +23,11 @@ This is a template example for lab journaling. Students in the data science cour
 
 ## How to use
 
-1. fork this repository for this website and follow instructions on read me to get set up. [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
+1. fork this repository for this website and follow instructions on read me to get set up. [https://tuhh-w11.github.io/lab_journal_website/](https://tuhh-w11.github.io/lab_journal_website/)
 
-2. Blog/journal what you are doing in R, by editing the Journal.Rmd. See the [Journal page](https://crumplab.github.io/LabJournalWebsite/Journal.html) for an example of what to do to get started learning R.
+2. Blog/journal what you are doing in R, by editing the Journal.Rmd. See the [Journal page](https://tuhh-w11.github.io/lab_journal_website/) for an example of what to do to get started learning R.
 
-3. See the [links page](https://crumplab.github.io/LabJournalWebsite/Links.html) for lots of helpful links on learning R.
+3. See the [links page](https://tuhh-w11.github.io/lab_journal_website//Links.html) for lots of helpful links on learning R.
 
 4. Change everything to make it your own.
 

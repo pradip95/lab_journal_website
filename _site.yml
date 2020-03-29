@@ -6,7 +6,7 @@ navbar:
       href: index.html
     - text: "Journal"
       href: journal.html
-    - text: "Practice"
+    - text: "Class notes"
       menu:
             - text: "Dictionary"
               href: dictionary.html
