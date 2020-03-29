@@ -2,20 +2,23 @@
 title: "Dictionary"
 author: "Joschka Schwarz"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  html_document:
+    number_sections: true
+    code_folding: show
 ---
 
-# Dictionary {-}
-
+# Helpful code chunks
 ## General bits
 
 1. `?function_name`
 This function provides information about how particular pieces of syntax work. 
+
 ```{r}
 ?list.files
 ```
 
-5. `list.files()`
+2. `list.files()`
 This function lists all the names of each file in a given R project.
 ```{r}
 list.files()
@@ -30,14 +33,14 @@ list.files()
 This saves an R object to a file.
 ```{r}
 x <- 1
-save("x", file = "testfile.txt")
+saveRDS("x", file = "testfile.rds")
 ```
 
 
 2. `readRDS()`
 This loads saved data.
 ```{r}
-load(file = "testfile.txt")
+x <- readRDS(file = "testfile.rds")
 ```
 
 ...
@@ -45,74 +48,67 @@ load(file = "testfile.txt")
 ***
 
 ## Data Creation
-1. c()
+1. `c()`
 This function is used to combine elements (factors in a vectore for example)
 ```{r}
-c(1,2,3,4,5)
+numbers <- c(1,2,3,4,5)
+numbers <- c(1:5)
+print(numbers)
 ```
 
 
-2. from:to (where from and to are replaced with numbers, e.g. 1:10)
-This lists all the numbers in a specified range.
+2. `seq()`
+Generates a sequence of numbers. The first two values are the starting and (maximal) end values of the sequence. The third is the step width of the sequence.
 ```{r}
-1:10
+seq(1,10,2)
 ```
 
-
-3. `seq()`
-Not exactly sure what is happening here but it appears that this function is using the first two numbers to help derive the third.
-```{r}
-seq(2,10,7)
-```
-
-
-4. `rep()`
+3. `rep()`
 This function replicates the first number the number of times that is designated in the second space
 ```{r}
 rep(1,10)
 ```
 
 
-5. data.frame()
+4. `data.frame()
 This allows one to enter specific groups of data values
-ex.
 ```{r}
-data.frame(1, 2, 3, 5)
+df <- data.frame(col_A = c(1, 2, 3, 5), col_B = c("A", "B", "C", "D"))
+df
 ```
 
 6. list()
 This provides a numbered list for all objects in a set.
 ```{r}
-list(2,6,1,3,8)
+list(c(2,6,1,3,8))
 ```
 
 9. `rbind()` and  `cbind()`
 This function allows you to bind a new row to an existing data frame
 ```{r}
-A <- 1
-B <- 2
-df <- rbind(A, B)
+col_C  <- c(TRUE, FALSE, FALSE, TRUE)
+df_new <- rbind(df, col_C)
 ```
 
 
-##Slicing and extracting data indexing vectors
-x[n] nth element
-x[-n] all but nth element
-x[1:n] first n elements
-x[-(1:n)] elements from n+1 to the end
-x[c(1,4,2)] specific elements
-x[“name”] elements named “name”
-x[x>3] all elements greater than 3
-x[x > 3 & x < 5] all elements between 3 and 5
-x[x %in% c(“a”,“and”,“the”)] all elements in given set
+## Slicing and extracting data indexing vectors
+* `x[n]` nth element
+* `x[-n]` all but nth element
+* `x[1:n]` first n elements
+* `x[-(1:n)]` elements from n+1 to the end
+* `x[c(1,4,2)]` specific elements
+* `x[“name”]` elements named “name”
+* `x[x>3]` all elements greater than 3
+* `x[x > 3 & x < 5]` all elements between 3 and 5
+* `x[x %in% c(“a”,“and”,“the”)]` all elements in given set
 
-##Indexing lists
+## Indexing lists
 x[n] list with elements n
 x[[n]] nt h element of the list
 x[[“name”]] element of the list named “name”
 x$name id.
 
-##Indexing matrices
+## Indexing matrices
 x[i,j] element at row i, column j
 x[i,] row i
 x[,j] column j
@@ -122,13 +118,13 @@ Indexing data frames (matrix indexing plus the following)
 x[[“name”]] column named “name”
 x$nameid.
 
-##Variable conversion
+## Variable conversion
 as.data.frame(x)
 as.numeric(x)
 as.logical(x)
 as.character(x)
 
-##Variable information
+## Variable information
 1.is.na(x)
 2.is.null(x)
 3.is.data.frame(x)
@@ -141,7 +137,7 @@ as.character(x)
 11.class()
 12.attributes()
 
-##Data selection and manipulation
+## Data selection and manipulation
 1.which.max()
 2.which.min()
 3.which()
@@ -150,7 +146,7 @@ as.character(x)
 6.table()
 7.sample()
 
-##Math
+## Math
 1.max()
 This sets the maximum value included in a data set.
 ```{r}
@@ -235,7 +231,7 @@ abs(-20)
 ```
 
 
-##Matrices
+## Matrices
 t()
 diag()
 rowSums()
@@ -243,7 +239,7 @@ colSums()
 rowMeans()
 colMeans()
 
-##Advanced Data processing
+## Advanced Data processing
 apply()
 aggregate()
 Strings
@@ -252,7 +248,7 @@ strsplit()
 tolower()
 toupper
 
-##Plotting
+## Plotting
 hist()
 This function creates a histogram graph of a given set of data.
 ```{r}
@@ -269,7 +265,7 @@ plot(x)
 ```
 
 
-##Distributions
+## Distributions
 rnorm()
 This function inserts a normal distribution.
 ```{r}
@@ -277,7 +273,7 @@ rnorm(100, mean = 50, sd=2)
 ```
 
 
-##Programming
+## Programming
 show that you can define a function
 show that you can write a for loop
 show that you can write a while loop
@@ -285,5 +281,5 @@ show that you can write an if else statement
 Explain what return() does inside a function, show you can use it
 Explain what break() does, show you can use it
 
-##Installing some packages
+## Installing some packages
 Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.

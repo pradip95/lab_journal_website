@@ -10,12 +10,10 @@ navbar:
       menu:
             - text: "Dictionary"
               href: dictionary.html
-            - text: "Class Notes"
-              href: practice.html
+            - text: "Data Wrangling"
+              href: data_wrangling.html
             - text: "ggplot graphs"
               href: ggplot_graphs.html
-            - text: "data wrangling"
-              href: data_wrangling.html
             - text: "statistics"
               href: statistics.html
             - text: "machine learning"
