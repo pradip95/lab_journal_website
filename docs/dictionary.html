@@ -416,9 +416,9 @@ div.tocify {
 }
 </style>
 <div id="helpful-code-chunks" class="section level1">
-<h1>Helpful code chunks</h1>
+<h1><span class="header-section-number">1</span> Helpful code chunks</h1>
 <div id="general-bits" class="section level2">
-<h2>General bits</h2>
+<h2><span class="header-section-number">1.1</span> General bits</h2>
 <ol style="list-style-type: decimal">
 <li><code>?function_name</code> This function provides information about how particular pieces of syntax work.</li>
 </ol>
@@ -441,7 +441,7 @@ div.tocify {
 <hr />
 </div>
 <div id="input-and-output" class="section level2">
-<h2>Input and output</h2>
+<h2><span class="header-section-number">1.2</span> Input and output</h2>
 <ol style="list-style-type: decimal">
 <li><code>saveRDS()</code> This saves an R object to a file.</li>
 </ol>
@@ -455,7 +455,7 @@ saveRDS(&quot;x&quot;, file = &quot;testfile.rds&quot;)</code></pre>
 <hr />
 </div>
 <div id="data-creation" class="section level2">
-<h2>Data Creation</h2>
+<h2><span class="header-section-number">1.3</span> Data Creation</h2>
 <ol style="list-style-type: decimal">
 <li><code>c()</code> This function is used to combine elements (factors in a vectore for example)</li>
 </ol>
@@ -498,7 +498,7 @@ df_new &lt;- rbind(df, col_C)</code></pre>
 ## generated</code></pre>
 </div>
 <div id="slicing-and-extracting-data-indexing-vectors" class="section level2">
-<h2>Slicing and extracting data indexing vectors</h2>
+<h2><span class="header-section-number">1.4</span> Slicing and extracting data indexing vectors</h2>
 <ul>
 <li><code>x[n]</code> nth element</li>
 <li><code>x[-n]</code> all but nth element</li>
@@ -512,27 +512,27 @@ df_new &lt;- rbind(df, col_C)</code></pre>
 </ul>
 </div>
 <div id="indexing-lists" class="section level2">
-<h2>Indexing lists</h2>
+<h2><span class="header-section-number">1.5</span> Indexing lists</h2>
 <p>x[n] list with elements n x[[n]] nt h element of the list x[[“name”]] element of the list named “name” x$name id.</p>
 </div>
 <div id="indexing-matrices" class="section level2">
-<h2>Indexing matrices</h2>
+<h2><span class="header-section-number">1.6</span> Indexing matrices</h2>
 <p>x[i,j] element at row i, column j x[i,] row i x[,j] column j x[,c(1,3)] columns 1 and 3 x[“name”,] row named “name” Indexing data frames (matrix indexing plus the following) x[[“name”]] column named “name” x$nameid.</p>
 </div>
 <div id="variable-conversion" class="section level2">
-<h2>Variable conversion</h2>
+<h2><span class="header-section-number">1.7</span> Variable conversion</h2>
 <p>as.data.frame(x) as.numeric(x) as.logical(x) as.character(x)</p>
 </div>
 <div id="variable-information" class="section level2">
-<h2>Variable information</h2>
+<h2><span class="header-section-number">1.8</span> Variable information</h2>
 <p>1.is.na(x) 2.is.null(x) 3.is.data.frame(x) 4.is.numeric(x) 5.is.character(x) 6.length(x) 7.dim(x) 9.nrow(x) 10.ncol(x) 11.class() 12.attributes()</p>
 </div>
 <div id="data-selection-and-manipulation" class="section level2">
-<h2>Data selection and manipulation</h2>
+<h2><span class="header-section-number">1.9</span> Data selection and manipulation</h2>
 <p>1.which.max() 2.which.min() 3.which() 4.sort() 5.unique() 6.table() 7.sample()</p>
 </div>
 <div id="math" class="section level2">
-<h2>Math</h2>
+<h2><span class="header-section-number">1.10</span> Math</h2>
 <p>1.max() This sets the maximum value included in a data set.</p>
 <pre class="r"><code>x &lt;- c(1,2,3,4,5,10)
 max(x)</code></pre>
@@ -578,15 +578,15 @@ cor(x,y)</code></pre>
 <pre><code>## [1] 20</code></pre>
 </div>
 <div id="matrices" class="section level2">
-<h2>Matrices</h2>
+<h2><span class="header-section-number">1.11</span> Matrices</h2>
 <p>t() diag() rowSums() colSums() rowMeans() colMeans()</p>
 </div>
 <div id="advanced-data-processing" class="section level2">
-<h2>Advanced Data processing</h2>
+<h2><span class="header-section-number">1.12</span> Advanced Data processing</h2>
 <p>apply() aggregate() Strings paste() strsplit() tolower() toupper</p>
 </div>
 <div id="plotting" class="section level2">
-<h2>Plotting</h2>
+<h2><span class="header-section-number">1.13</span> Plotting</h2>
 <p>hist() This function creates a histogram graph of a given set of data.</p>
 <pre class="r"><code>x &lt;- c(1,20,50)
 hist(x)</code></pre>
@@ -597,29 +597,29 @@ plot(x)</code></pre>
 <p><img src="dictionary_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="distributions" class="section level2">
-<h2>Distributions</h2>
+<h2><span class="header-section-number">1.14</span> Distributions</h2>
 <p>rnorm() This function inserts a normal distribution.</p>
 <pre class="r"><code>rnorm(100, mean = 50, sd=2)</code></pre>
-<pre><code>##   [1] 51.64874 46.90545 51.35336 50.35451 47.13142 52.76227 54.49374 50.13108
-##   [9] 53.40844 45.80009 52.31039 51.24469 47.50266 47.70976 50.33547 49.77433
-##  [17] 50.57806 49.35758 51.68526 51.86898 50.43198 50.22214 50.34820 48.77742
-##  [25] 50.38479 48.47918 48.72805 47.54374 48.48073 45.43315 51.08266 53.03072
-##  [33] 47.07032 49.85845 49.84942 51.37143 48.53872 50.33890 51.42584 52.56280
-##  [41] 53.54307 49.83810 48.52534 51.76295 49.72669 48.70103 52.45092 49.74435
-##  [49] 47.03534 48.10950 52.40141 51.63180 49.86168 49.61002 50.10856 47.65836
-##  [57] 46.05398 48.06525 49.42039 48.31862 48.39073 49.46371 49.83380 47.85444
-##  [65] 48.33852 48.07733 50.72385 47.53993 49.81893 50.21682 49.96081 49.64663
-##  [73] 44.04808 50.77968 46.82248 50.24083 47.06971 50.99035 52.75799 52.63069
-##  [81] 48.72321 50.72272 48.93332 49.93482 50.69615 51.37335 49.24574 50.41799
-##  [89] 45.72258 51.77608 53.02624 54.25332 51.08705 47.83893 48.68372 51.27252
-##  [97] 50.30186 44.85131 49.28812 51.56270</code></pre>
+<pre><code>##   [1] 52.24091 47.56627 47.25726 50.58413 48.59351 47.68143 50.85661 46.77880
+##   [9] 52.46891 48.58653 54.97411 48.78087 51.52820 49.60901 49.05910 47.61461
+##  [17] 48.21031 44.45517 49.58964 49.47802 47.29802 49.72375 52.59016 48.74569
+##  [25] 49.82045 49.64441 51.84105 49.73825 53.57557 52.18044 50.05175 49.46530
+##  [33] 50.60775 48.36531 53.02419 50.03096 52.40468 50.15687 51.14274 48.20008
+##  [41] 49.55773 50.09061 51.79980 45.60103 49.42389 50.91196 45.91662 50.03814
+##  [49] 49.49570 49.18623 49.36805 47.85600 48.58078 51.45006 48.99641 50.93436
+##  [57] 51.20471 51.58530 49.65713 51.10040 48.92782 47.25693 52.91409 51.11324
+##  [65] 47.81384 47.68164 52.97099 49.41725 47.44595 49.58809 51.93337 50.69412
+##  [73] 50.04298 49.58813 51.26884 51.06839 48.85313 49.06878 47.01035 50.72953
+##  [81] 48.47455 49.79829 49.75765 51.25271 51.34550 49.86206 50.40143 49.69288
+##  [89] 52.66054 50.63434 53.53273 50.16960 47.05495 49.49744 49.12249 47.52502
+##  [97] 51.52086 46.96152 52.47964 46.25145</code></pre>
 </div>
 <div id="programming" class="section level2">
-<h2>Programming</h2>
+<h2><span class="header-section-number">1.15</span> Programming</h2>
 <p>show that you can define a function show that you can write a for loop show that you can write a while loop show that you can write an if else statement Explain what return() does inside a function, show you can use it Explain what break() does, show you can use it</p>
 </div>
 <div id="installing-some-packages" class="section level2">
-<h2>Installing some packages</h2>
+<h2><span class="header-section-number">1.16</span> Installing some packages</h2>
 <p>Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.</p>
 </div>
 </div>
