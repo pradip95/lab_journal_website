@@ -1,4 +1,7 @@
 name: "MyLabJournal"
+output:
+  html_document:
+    css: style.css
 navbar:
   title: "MyLabJournal"
   left:

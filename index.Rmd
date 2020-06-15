@@ -3,17 +3,6 @@ title: "MyLabJournal"
 output: html_document
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
-
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
@@ -30,7 +19,6 @@ This is a template example for lab journaling. Students in the data science cour
 3. See the [links page](https://tuhh-w11.github.io/lab_journal_website//Links.html) for lots of helpful links on learning R.
 
 4. Change everything to make it your own.
-
 
 </div>
 <div class="col-sm-6">
