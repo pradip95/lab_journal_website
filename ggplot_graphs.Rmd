@@ -14,12 +14,14 @@ knitr::opts_chunk$set(echo = TRUE)
 =======
 
 ```{r}
-library(ggplot2)
+if (!require(ggplot2)) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
 mpg
 ```
 
 ```{r}
-library(ggplot2)
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) + 
   geom_smooth()

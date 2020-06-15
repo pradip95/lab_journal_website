@@ -281,15 +281,3 @@ This function inserts a normal distribution.
 ```{r}
 rnorm(100, mean = 50, sd=2)
 ```
-
-
-## Programming
-show that you can define a function
-show that you can write a for loop
-show that you can write a while loop
-show that you can write an if else statement
-Explain what return() does inside a function, show you can use it
-Explain what break() does, show you can use it
-
-## Installing some packages
-Use the packages tab in R-studio to install these packages. You will need to be connected to the internet when you do this. If you are installing on your laptop, or on R-studio Cloud, then these packages will not need to installed again.
