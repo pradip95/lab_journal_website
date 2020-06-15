@@ -323,8 +323,12 @@ $(document).ready(function () {
 
 
 <p>=======</p>
-<pre class="r"><code>library(ggplot2)
-mpg</code></pre>
+<pre class="r"><code>if (!require(ggplot2)) {
+  install.packages(&quot;ggplot2&quot;)
+  library(ggplot2)
+}</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre class="r"><code>mpg</code></pre>
 <pre><code>## # A tibble: 234 x 11
 ##    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
 ##    &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
@@ -339,8 +343,7 @@ mpg</code></pre>
 ##  9 audi         a4 quat…   1.8  1999     4 auto(l… 4        16    25 p     comp…
 ## 10 audi         a4 quat…   2    2008     4 manual… 4        20    28 p     comp…
 ## # … with 224 more rows</code></pre>
-<pre class="r"><code>library(ggplot2)
-ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) + 
   geom_smooth()</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>

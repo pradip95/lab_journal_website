@@ -10,12 +10,11 @@ output: html_document
 To explore the basic data manipulation verbs of dplyr, we’ll use nycflights13::flights. This data frame contains all 336,776 flights that departed from New York City in 2013. The data comes from the US Bureau of Transportation Statistics, and is documented in ?flights.
 
 ```{r, message=FALSE}
-packages <- c("nycflights13", "dplyr")
-
-if (!require(packages, character.only = TRUE)) {
-  install.packages(packages)
-  if (!require(packages, character.only = TRUE)) stop("load failure: ", packages)
+if (!require(nycflights13)) {
+  install.packages("nycflights13")
+  library(nycflights13)
 }
+library(dplyr)
 
 flights
 ```
