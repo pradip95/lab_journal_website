@@ -35,8 +35,6 @@ This is a template example for lab journaling. Students in the data science cour
 </div>
 <div class="col-sm-6">
 
-### [Data Science at NIT](https://tuhh-w11.github.io/data-science/)
-
 <a href = "https://tuhh-w11.github.io/data-science/">
 ![](images/logo_nit_facebook.png)
 </a>
