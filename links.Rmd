@@ -10,11 +10,6 @@ output: html_document
 </style>
 <div class="row" style="padding-top: 30px;">
 
-# Shiny Test
-
-https://learnr-examples.shinyapps.io/ex-setup-r/
-
-
 # Resources
 ### R and R-Studio
 
