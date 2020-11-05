@@ -4,26 +4,19 @@ output: html_document
 ---
 
 <div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
+![](images/logo.png)
+</div>
 
 # **My Lab Journal**
 
-This is a template example for lab journaling. Students in the data science course at NIT will use this template to learn R for business analytics. Students can replace this text as they wish.
+This is a template example for lab journaling. Students in the data science courses at the Institute of Entrepreneurship will use this template to learn R for business analytics. Students can replace this text as they wish.
 
 ## How to use
 
-1. Fork this repository for this website and follow the instructions on the README to get set up. [https://github.com/TUHHStartupEngineers/lab_journal_website](https://github.com/TUHHStartupEngineers/lab_journal_website)
+1. Fork the repository for this website and follow the instructions in the README to get set up: [https://github.com/TUHHStartupEngineers/lab_journal_website](https://github.com/TUHHStartupEngineers/lab_journal_website)
 
-2. Blog/journal what you are doing in R, by editing the `Journal.Rmd` file. See the [Journal page](https://tuhhstartupengineers.github.io/lab_journal_website/) for an example of what to do to get started learning R. Moreover, you can edit/add/remove files, that are listed in the navigation bar under class notes.
+2. Blog/journal what you are doing in R, by editing the `Journal.Rmd` file. See the [Journal page](https://tuhhstartupengineers.github.io/lab_journal_website/journal.html) for an example of what to do to get started learning R. Moreover, you can edit/add/remove files, that are listed in the navigation bar under class notes.
 
 3. See the [links page](https://tuhhstartupengineers.github.io/lab_journal_website/Links.html) for lots of helpful links on learning R.
 
 4. Change everything to make it your own.
-
-</div>
-<div class="col-sm-6">
-
-<a href = "https://github.com/TUHHStartupEngineers/lab_journal_website">
-![](images/logo.png)
-</a>
-</div>

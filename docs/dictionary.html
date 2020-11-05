@@ -11,10 +11,11 @@
 
 <meta name="author" content="Joschka Schwarz" />
 
-<meta name="date" content="2020-06-15" />
+<meta name="date" content="2020-11-05" />
 
 <title>Dictionary</title>
 
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -406,7 +407,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Dictionary</h1>
 <h4 class="author">Joschka Schwarz</h4>
-<h4 class="date">2020-06-15</h4>
+<h4 class="date">2020-11-05</h4>
 
 </div>
 
@@ -416,10 +417,10 @@ div.tocify {
     background-color: #2DC6D6;
 }
 </style>
-<div id="helpful-code-chunks" class="section level1">
-<h1><span class="header-section-number">1</span> Helpful code chunks</h1>
-<div id="general-bits" class="section level2">
-<h2><span class="header-section-number">1.1</span> General bits</h2>
+<div id="helpful-code-chunks" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Helpful code chunks</h1>
+<div id="general-bits" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> General bits</h2>
 <ol style="list-style-type: decimal">
 <li><code>?function_name</code> This function provides information about how particular pieces of syntax work.</li>
 </ol>
@@ -440,8 +441,8 @@ div.tocify {
 <p>…</p>
 <hr />
 </div>
-<div id="input-and-output" class="section level2">
-<h2><span class="header-section-number">1.2</span> Input and output</h2>
+<div id="input-and-output" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Input and output</h2>
 <ol style="list-style-type: decimal">
 <li><code>saveRDS()</code> This saves an R object to a file.</li>
 </ol>
@@ -454,8 +455,8 @@ saveRDS(&quot;x&quot;, file = &quot;testfile.rds&quot;)</code></pre>
 <p>…</p>
 <hr />
 </div>
-<div id="data-creation" class="section level2">
-<h2><span class="header-section-number">1.3</span> Data Creation</h2>
+<div id="data-creation" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Data Creation</h2>
 <ol style="list-style-type: decimal">
 <li><code>c()</code> This function is used to combine elements (factors in a vectore for example)</li>
 </ol>
@@ -494,11 +495,9 @@ df</code></pre>
 </ol>
 <pre class="r"><code>col_C  &lt;- c(TRUE, FALSE, FALSE, TRUE)
 df_new &lt;- rbind(df, col_C)</code></pre>
-<pre><code>## Warning in `[&lt;-.factor`(`*tmp*`, ri, value = FALSE): invalid factor level, NA
-## generated</code></pre>
 </div>
-<div id="slicing-and-extracting-data-indexing-vectors" class="section level2">
-<h2><span class="header-section-number">1.4</span> Slicing and extracting data indexing vectors</h2>
+<div id="slicing-and-extracting-data-indexing-vectors" class="section level2" number="1.4">
+<h2 number="1.4"><span class="header-section-number">1.4</span> Slicing and extracting data indexing vectors</h2>
 <ul>
 <li><code>x[n]</code> nth element</li>
 <li><code>x[-n]</code> all but nth element</li>
@@ -511,28 +510,28 @@ df_new &lt;- rbind(df, col_C)</code></pre>
 <li><code>x[x %in% c(“a”,“and”,“the”)]</code> all elements in given set</li>
 </ul>
 </div>
-<div id="indexing-lists" class="section level2">
-<h2><span class="header-section-number">1.5</span> Indexing lists</h2>
+<div id="indexing-lists" class="section level2" number="1.5">
+<h2 number="1.5"><span class="header-section-number">1.5</span> Indexing lists</h2>
 <p>x[n] list with elements n x[[n]] nt h element of the list x[[“name”]] element of the list named “name” x$name id.</p>
 </div>
-<div id="indexing-matrices" class="section level2">
-<h2><span class="header-section-number">1.6</span> Indexing matrices</h2>
+<div id="indexing-matrices" class="section level2" number="1.6">
+<h2 number="1.6"><span class="header-section-number">1.6</span> Indexing matrices</h2>
 <p>x[i,j] element at row i, column j x[i,] row i x[,j] column j x[,c(1,3)] columns 1 and 3 x[“name”,] row named “name” Indexing data frames (matrix indexing plus the following) x[[“name”]] column named “name” x$nameid.</p>
 </div>
-<div id="variable-conversion" class="section level2">
-<h2><span class="header-section-number">1.7</span> Variable conversion</h2>
+<div id="variable-conversion" class="section level2" number="1.7">
+<h2 number="1.7"><span class="header-section-number">1.7</span> Variable conversion</h2>
 <p>as.data.frame(x) as.numeric(x) as.logical(x) as.character(x)</p>
 </div>
-<div id="variable-information" class="section level2">
-<h2><span class="header-section-number">1.8</span> Variable information</h2>
+<div id="variable-information" class="section level2" number="1.8">
+<h2 number="1.8"><span class="header-section-number">1.8</span> Variable information</h2>
 <p>1.is.na(x) 2.is.null(x) 3.is.data.frame(x) 4.is.numeric(x) 5.is.character(x) 6.length(x) 7.dim(x) 9.nrow(x) 10.ncol(x) 11.class() 12.attributes()</p>
 </div>
-<div id="data-selection-and-manipulation" class="section level2">
-<h2><span class="header-section-number">1.9</span> Data selection and manipulation</h2>
+<div id="data-selection-and-manipulation" class="section level2" number="1.9">
+<h2 number="1.9"><span class="header-section-number">1.9</span> Data selection and manipulation</h2>
 <p>1.which.max() 2.which.min() 3.which() 4.sort() 5.unique() 6.table() 7.sample()</p>
 </div>
-<div id="math" class="section level2">
-<h2><span class="header-section-number">1.10</span> Math</h2>
+<div id="math" class="section level2" number="1.10">
+<h2 number="1.10"><span class="header-section-number">1.10</span> Math</h2>
 <p>1.max() This sets the maximum value included in a data set.</p>
 <pre class="r"><code>x &lt;- c(1,2,3,4,5,10)
 max(x)</code></pre>
@@ -577,16 +576,16 @@ cor(x,y)</code></pre>
 <pre class="r"><code>abs(-20)</code></pre>
 <pre><code>## [1] 20</code></pre>
 </div>
-<div id="matrices" class="section level2">
-<h2><span class="header-section-number">1.11</span> Matrices</h2>
+<div id="matrices" class="section level2" number="1.11">
+<h2 number="1.11"><span class="header-section-number">1.11</span> Matrices</h2>
 <p>t() diag() rowSums() colSums() rowMeans() colMeans()</p>
 </div>
-<div id="advanced-data-processing" class="section level2">
-<h2><span class="header-section-number">1.12</span> Advanced Data processing</h2>
+<div id="advanced-data-processing" class="section level2" number="1.12">
+<h2 number="1.12"><span class="header-section-number">1.12</span> Advanced Data processing</h2>
 <p>apply() aggregate() Strings paste() strsplit() tolower() toupper</p>
 </div>
-<div id="plotting" class="section level2">
-<h2><span class="header-section-number">1.13</span> Plotting</h2>
+<div id="plotting" class="section level2" number="1.13">
+<h2 number="1.13"><span class="header-section-number">1.13</span> Plotting</h2>
 <p>hist() This function creates a histogram graph of a given set of data.</p>
 <pre class="r"><code>x &lt;- c(1,20,50)
 hist(x)</code></pre>
@@ -596,23 +595,23 @@ hist(x)</code></pre>
 plot(x)</code></pre>
 <p><img src="dictionary_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
-<div id="distributions" class="section level2">
-<h2><span class="header-section-number">1.14</span> Distributions</h2>
+<div id="distributions" class="section level2" number="1.14">
+<h2 number="1.14"><span class="header-section-number">1.14</span> Distributions</h2>
 <p>rnorm() This function inserts a normal distribution.</p>
 <pre class="r"><code>rnorm(100, mean = 50, sd=2)</code></pre>
-<pre><code>##   [1] 53.60180 53.82160 51.28182 52.16004 49.21557 45.86711 48.04301 49.26599
-##   [9] 49.18406 47.03106 51.34081 51.25063 49.50617 47.49870 50.67426 48.71800
-##  [17] 48.83063 53.43981 50.92244 48.76792 47.76789 51.15613 49.60354 46.61661
-##  [25] 49.03180 48.54577 46.71730 53.07750 51.36456 52.46412 51.34934 52.11305
-##  [33] 50.71025 50.33237 51.50870 51.31102 51.68068 48.53228 49.23290 50.77318
-##  [41] 48.29871 47.70570 51.65960 48.42539 51.85052 51.38392 50.33263 46.69005
-##  [49] 48.99431 48.47159 49.73792 50.45342 49.16057 50.23682 48.92481 47.49996
-##  [57] 50.37251 53.09274 47.26904 52.01589 48.92810 47.77027 51.21524 48.84225
-##  [65] 45.31989 51.08402 46.99535 47.69306 48.71812 50.66630 49.17569 50.00153
-##  [73] 52.48018 49.78574 50.25993 50.23075 50.80664 48.44780 47.89669 48.31461
-##  [81] 52.34741 51.62290 49.21648 49.00518 46.57177 50.43814 46.13397 52.69903
-##  [89] 50.98591 51.86887 52.41555 49.96453 46.25805 55.34728 49.41420 47.50719
-##  [97] 51.63510 45.90328 49.94012 50.15856</code></pre>
+<pre><code>##   [1] 49.68567 48.49329 50.25599 54.43302 51.64905 47.06105 48.25189 53.15607
+##   [9] 51.80345 54.65246 48.22653 51.24356 50.83454 47.31075 49.04033 50.19597
+##  [17] 50.38147 51.34864 48.69664 48.99008 52.37311 48.01593 52.06025 48.32444
+##  [25] 52.39956 51.92450 49.69438 47.59832 53.78365 50.02854 48.76735 52.29283
+##  [33] 50.69385 49.82918 55.44648 46.91250 46.79845 53.17935 47.12853 47.68387
+##  [41] 50.89340 48.29287 51.84165 49.91933 51.77462 50.66519 51.76968 47.65726
+##  [49] 50.06719 50.82360 50.68475 46.13088 47.71727 50.71004 48.26583 49.03094
+##  [57] 49.68693 48.82058 50.06466 47.25199 50.10667 48.74001 50.49019 46.18288
+##  [65] 49.97209 48.87033 48.87391 48.64880 51.09684 52.17200 48.11004 51.51746
+##  [73] 45.50326 48.87159 50.21565 52.46571 50.87581 51.26289 45.87749 52.87375
+##  [81] 51.89791 48.19994 54.22699 48.61419 47.88314 46.25526 51.71058 51.09432
+##  [89] 49.58644 49.23720 52.04133 49.07278 52.58826 50.64441 50.13731 49.76150
+##  [97] 54.36480 47.81738 52.69068 52.64231</code></pre>
 </div>
 </div>
 
@@ -671,7 +670,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
