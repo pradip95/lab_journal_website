@@ -80,28 +80,17 @@ rep(1,10)
 ```
 
 
-4. `data.frame()
+4. `data.frame()`
 This allows one to enter specific groups of data values
 ```{r}
 df <- data.frame(col_A = c(1, 2, 3, 5), col_B = c("A", "B", "C", "D"))
 df
 ```
 
-6. list()
-This provides a numbered list for all objects in a set.
-```{r}
-list(c(2,6,1,3,8))
-```
-
-9. `rbind()` and  `cbind()`
-This function allows you to bind a new row to an existing data frame
-```{r}
-col_C  <- c(TRUE, FALSE, FALSE, TRUE)
-df_new <- rbind(df, col_C)
-```
-
+5. ...
 
 ## Slicing and extracting data indexing vectors
+
 * `x[n]` nth element
 * `x[-n]` all but nth element
 * `x[1:n]` first n elements
@@ -113,59 +102,69 @@ df_new <- rbind(df, col_C)
 * `x[x %in% c(“a”,“and”,“the”)]` all elements in given set
 
 ## Indexing lists
-x[n] list with elements n
-x[[n]] nt h element of the list
-x[[“name”]] element of the list named “name”
-x$name id.
+
+* `x[n]` list with elements n
+* `x[[n]]` nth element of the list
+* `x[[“name”]]` element of the list named “name”. Alternatively: `x$name`
 
 ## Indexing matrices
-x[i,j] element at row i, column j
-x[i,] row i
-x[,j] column j
-x[,c(1,3)] columns 1 and 3
-x[“name”,] row named “name”
-Indexing data frames (matrix indexing plus the following)
-x[[“name”]] column named “name”
-x$nameid.
+
+* x[i,j] element at row i, column j
+* x[i,] row i
+* x[,j] column j
+* x[,c(1,3)] columns 1 and 3
+* x[“name”,] row named “name”
+
+## Indexing data frames 
+
+Matrix indexing plus the following
+
+* x[[“name”]] column named “name”. Alternatively: `x$name`
+
 
 ## Variable conversion
+
 as.data.frame(x)
 as.numeric(x)
 as.logical(x)
 as.character(x)
 
 ## Variable information
-1.is.na(x)
-2.is.null(x)
-3.is.data.frame(x)
-4.is.numeric(x)
-5.is.character(x)
-6.length(x)
-7.dim(x)
-9.nrow(x)
-10.ncol(x)
-11.class()
-12.attributes()
+
+1. `is.na(x)`
+2. `is.null(x)`
+3. `is.data.frame(x)`
+4. `is.numeric(x)`
+5. `is.character(x)`
+6. `length(x)`
+7. `dim(x)`
+9. `nrow(x)`
+10. `ncol(x)`
+11. `class()`
+12. `attributes()`
 
 ## Data selection and manipulation
-1.which.max()
-2.which.min()
-3.which()
-4.sort()
-5.unique()
-6.table()
-7.sample()
+
+1. `which.max()`
+2. `which.min()`
+3. `which()`
+4. `sort()`
+5. `unique()`
+6. `table()`
+7. `sample()`
 
 ## Math
-1.max()
+
+1. `max()`
+
 This sets the maximum value included in a data set.
 ```{r}
 x <- c(1,2,3,4,5,10)
 max(x)
 ```
 
+2. `min()`
 
-2.min()
 This set the minimum value included in a data set.
 ```{r}
 x <- c(1,10,20,100)
@@ -173,7 +172,8 @@ min(x)
 ```
 
 
-3.range()
+3. `range()`
+
 This determines the range of numbers considered in a set.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
@@ -181,7 +181,8 @@ range(x)
 ```
 
 
-4.sum()
+4. `sum()`
+
 This function adds all the numbers in a given set.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
@@ -190,7 +191,8 @@ sum(x)
 ```
 
 
-5.mean()
+5. `mean()`
+
 Creates the mean of a given set of number values.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
@@ -198,7 +200,8 @@ mean(x)
 ```
 
 
-6.median()
+6. `median()`
+
 calculates the median of a set of numbers.
 ```{r}
 x <- c(1, 10, 20, 40,  100)
@@ -206,21 +209,24 @@ median(x)
 ```
 
 
-7.var()
+7. `var()`
+
 This calculates the variance of a set of values.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
 var(x)
 ```
 
-8.sd()
+8. `sd()`
+
 This calculates the standard deviation of a set of values.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
 sd(x)
 ```
 
-9.cor()
+9. `cor()`
+
 This calculates the correlation between groups of data.
 ```{r}
 x <- c(1, 10, 20, 40, 100)
@@ -228,13 +234,15 @@ y <- c(50, 60, 100, 200, 300)
 cor(x,y)
 ```
 
-10.round()
+10. `round()`
+
 This rounds a decimal to a specified number of decimals.
 ```{r}
 round(5.4567,1)
 ```
 
-11.abs()
+11. `abs()`
+
 This takes the absolute value of a given number.
 ```{r}
 abs(-20)
@@ -242,32 +250,38 @@ abs(-20)
 
 
 ## Matrices
-t()
-diag()
-rowSums()
-colSums()
-rowMeans()
-colMeans()
+
+* `t()`
+* `diag()`
+* `rowSums()`
+* `colSums()`
+* `rowMeans()`
+* `colMeans()`
 
 ## Advanced Data processing
-apply()
-aggregate()
-Strings
-paste()
-strsplit()
-tolower()
-toupper
+
+* `lapply()`
+* `aggregate()`
+
+## Strings
+
+* `paste()`
+* `strsplit()`
+* `tolower()`
+* `toupper()`
 
 ## Plotting
-hist()
+
+* `hist()`
+
 This function creates a histogram graph of a given set of data.
 ```{r}
 x <- c(1,20,50)
 hist(x)
 ```
 
+* `plot()`
 
-plot()
 This function creates a plot graph of a given set of data.
 ```{r}
 x <- cbind(c(1,2,3,4),c(10,20,30,40))
@@ -276,8 +290,12 @@ plot(x)
 
 
 ## Distributions
-rnorm()
+
+* `rnorm()`
+
 This function inserts a normal distribution.
-```{r}
+```{r, eval=F}
 rnorm(100, mean = 50, sd=2)
 ```
+
+Because of `eval=F`, the code will not be evaluated in the last piece of code.

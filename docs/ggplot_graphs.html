@@ -11,7 +11,6 @@
 
 <meta name="author" content="Joschka Schwarz" />
 
-<meta name="date" content="2019-03-18" />
 
 <title>ggplot Graphs</title>
 
@@ -319,18 +318,24 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">ggplot Graphs</h1>
 <h4 class="author">Joschka Schwarz</h4>
-<h4 class="date">March 18, 2019</h4>
+<h4 class="date">Nov 5, 2020</h4>
 
 </div>
 
 
-<p>=======</p>
-<pre class="r"><code>if (!require(ggplot2)) {
-  install.packages(&quot;ggplot2&quot;)
+<p>The following code chunks will only print something, if you’ve installed the package <code>ggplot2</code>.</p>
+<p>Install it by running:</p>
+<pre class="r"><code>install.packages(&quot;ggplot2&quot;)</code></pre>
+<p>After installing it, you can remove the <code>if</code> conditions in the next code chunks.</p>
+<pre class="r"><code>if (&quot;ggplot2&quot; %in% rownames(installed.packages())) {
+  
+  # Laod plotting library
   library(ggplot2)
-}</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre class="r"><code>mpg</code></pre>
+
+  # Print data
+  mpg
+  
+  }</code></pre>
 <pre><code>## # A tibble: 234 x 11
 ##    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
 ##    &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
@@ -345,11 +350,15 @@ $(document).ready(function () {
 ##  9 audi         a4 quat…   1.8  1999     4 auto(l… 4        16    25 p     comp…
 ## 10 audi         a4 quat…   2    2008     4 manual… 4        20    28 p     comp…
 ## # … with 224 more rows</code></pre>
-<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+<pre class="r"><code>if (&quot;ggplot2&quot; %in% rownames(installed.packages())) {
+  
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) + 
-  geom_smooth()</code></pre>
+  geom_smooth()
+  
+}</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="ggplot_graphs_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="ggplot_graphs_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>…</p>
 
 

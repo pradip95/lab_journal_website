@@ -1,28 +1,41 @@
 ---
 title: "Data Wrangling"
-date: "May 02, 2020"
+date: "Nov 5, 2020"
 output: html_document
 ---
 
-
 # Example
 
-To explore the basic data manipulation verbs of dplyr, we’ll use nycflights13::flights. This data frame contains all 336,776 flights that departed from New York City in 2013. The data comes from the US Bureau of Transportation Statistics, and is documented in ?flights.
+To explore the basic data manipulation verbs of the package `dplyr`, we’ll use the datasets `mtcars` (comes with RStudio). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). The data is documented in `?mtcars`.
 
-```{r, message=FALSE}
-if (!require(nycflights13)) {
-  install.packages("nycflights13")
-  library(nycflights13)
-}
-library(dplyr)
+The following code chunks will only print something, if you've installed the package `dplyr`. That is why everything is wrapped in a `if` condition. 
 
-flights
+To do so, run:
+
+```{r eval=F}
+install.packages("dplyr")
 ```
 
-`filter()` allows you to subset observations based on their values. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame. For example, we can select all flights on January 1st with:
+```{r, message=FALSE}
+if ("dplyr" %in% rownames(installed.packages())) {
+
+  # Load libraries
+  library(dplyr)
+  
+  # Print the dataframe
+  mtcars
+
+}
+```
+
+`filter()` allows you to subset observations based on their values. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame. For example, we can select all cars with 4 cylinders and more than 90 horsepower:
 
 ```{r}
-filter(flights, month == 1, day == 1)
+if ("dplyr" %in% rownames(installed.packages())) {
+
+  filter(mtcars, cyl == 4, hp > 90)
+  
+}  
 ```
 
 ...
