@@ -17,6 +17,6 @@ This is a template example for lab journaling. Students in the data science cour
 
 2. Blog/journal what you are doing in R, by editing the `Journal.Rmd` file. See the [Journal page](https://tuhhstartupengineers.github.io/lab_journal_website/journal.html) for an example of what to do to get started learning R. Moreover, you can edit/add/remove files, that are listed in the navigation bar under class notes.
 
-3. See the [links page](https://tuhhstartupengineers.github.io/lab_journal_website/Links.html) for lots of helpful links on learning R.
+3. See the [links page](https://tuhhstartupengineers.github.io/lab_journal_website/links.html) for lots of helpful links on learning R.
 
 4. Change everything to make it your own.
