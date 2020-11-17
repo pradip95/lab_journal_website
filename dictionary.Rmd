@@ -24,7 +24,7 @@ output:
 1. `?function_name`
 This function provides information about how particular pieces of syntax work. 
 
-```{r}
+```{r, eval=FALSE}
 ?list.files
 ```
 
